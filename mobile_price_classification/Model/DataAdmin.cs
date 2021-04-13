@@ -32,6 +32,6 @@ namespace mobile_price_classification.Model
             return DS.Tables[0].DefaultView;
         }
 
-        public DataSet GetDS { get; }
+        public DataSet GetDS => DS;
     }
 }
