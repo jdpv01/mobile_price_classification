@@ -23,6 +23,9 @@ namespace mobile_price_classification
 
         private void Open(object sender, EventArgs e)
         {
+            CBColumns.Items.Clear();
+            ClearStuff();
+            BTNRestore.Visible = true;
             OpenFileDialog ofd = new OpenFileDialog
             {
                 Filter = "Excel | *.xls;*.xlsx;",
@@ -36,9 +39,14 @@ namespace mobile_price_classification
             DataTable DT = DM.GetDS.Tables[0];
             foreach (DataColumn column in DT.Columns)
             {
-                ColumnsCB.Items.Add(column.ColumnName);
+                CBColumns.Items.Add(column.ColumnName);
             }
             GenerateCharts();
+        }
+
+        private void BTNRestore_Click(object sender, EventArgs e)
+        {
+            DM.RestoreDataBase();
         }
 
         private void GenerateCharts()
@@ -48,48 +56,114 @@ namespace mobile_price_classification
 
         private void ColumnsCB_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ClearStuff();
+            DataTable dt = DM.GetDS.Tables[0];
+            string column = CBColumns.GetItemText(CBColumns.SelectedItem);
 
-        }
-
-        private void Search(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lowerBound_Enter(object sender, EventArgs e)
-        {
-            if (LowerBoundTB.Text == "from")
+            if (column == DataAdmin.DSIM || column == DataAdmin.TS 
+                || column == DataAdmin.WF || column == DataAdmin.PR)
             {
-                LowerBoundTB.Text = "";
-                LowerBoundTB.ForeColor = Color.Black;
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row[column] != DBNull.Value)
+                        if (!CBCategories.Items.Contains(row[column].ToString()))
+                            CBCategories.Items.Add(row[column].ToString());
+                }
+                CBCategories.Visible = true;
+            }
+            else if (column == DataAdmin.IM || column == DataAdmin.NC)
+            {
+                TBSearchEntry.Visible = true;
+                BTNSearchString.Visible = true;
+            }
+            else
+            {
+                TBLowerBound.Visible = true;
+                TBUpperBound.Visible = true;
+                BTNSearchRange.Visible = true;
+            }
+        }
+
+        private void ClearStuff()
+        {
+            CBCategories.Visible = false;
+            CBCategories.Items.Clear();
+            TBSearchEntry.Visible = false;
+            TBSearchEntry.Clear();
+            BTNSearchString.Visible = false;
+            TBLowerBound.Visible = false;
+            TBLowerBound.Clear();
+            TBUpperBound.Visible = false;
+            TBUpperBound.Clear();
+            BTNSearchRange.Visible = false;
+        }
+
+        private void CBCategories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DM.FilterByValue(CBColumns.SelectedItem.ToString(),
+                CBCategories.GetItemText(CBCategories.SelectedItem));
+        }
+
+        private void BTNSearchString_Click(object sender, EventArgs e)
+        {
+            DM.FilterByValue(CBColumns.SelectedItem.ToString(),
+                CBCategories.GetItemText(TBSearchEntry.Text));
+        }
+
+        private void BTNSearchRange_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Double lower = Convert.ToDouble(TBLowerBound.Text);
+                Double upper = Convert.ToDouble(TBUpperBound.Text);
+                if (lower < upper)
+                {
+                    DM.FilterByNumericRange(CBColumns.SelectedItem.ToString(), lower, upper);
+                }
+                else
+                {
+                    MessageBox.Show("Upper bound should be higher than lower bound.", "Error", MessageBoxButtons.OKCancel);
+                }
+            }catch (FormatException)
+            {
+                MessageBox.Show("Incorrect entry.", "Error", MessageBoxButtons.OKCancel);
+            }
+        }
+
+        private void LowerBound_Enter(object sender, EventArgs e)
+        {
+            if (TBLowerBound.Text == "from")
+            {
+                TBLowerBound.Text = "";
+                TBLowerBound.ForeColor = Color.Black;
             }
 
         }
 
-        private void lowerBound_Leave(object sender, EventArgs e)
+        private void LowerBound_Leave(object sender, EventArgs e)
         {
-            if (LowerBoundTB.Text == "")
+            if (TBLowerBound.Text == "")
             {
-                LowerBoundTB.Text = "from";
-                LowerBoundTB.ForeColor = Color.Gray;
+                TBLowerBound.Text = "from";
+                TBLowerBound.ForeColor = Color.Gray;
             }
         }
 
-        private void upperBound_Enter(object sender, EventArgs e)
+        private void UpperBound_Enter(object sender, EventArgs e)
         {
-            if (UpperBoundTB.Text == "to")
+            if (TBUpperBound.Text == "to")
             {
-                UpperBoundTB.Text = "";
-                UpperBoundTB.ForeColor = Color.Black;
+                TBUpperBound.Text = "";
+                TBUpperBound.ForeColor = Color.Black;
             }
         }
 
-        private void upperBound_Leave(object sender, EventArgs e)
+        private void UpperBound_Leave(object sender, EventArgs e)
         {
-            if (UpperBoundTB.Text == "")
+            if (TBUpperBound.Text == "")
             {
-                UpperBoundTB.Text = "to";
-                UpperBoundTB.ForeColor = Color.Gray;
+                TBUpperBound.Text = "to";
+                TBUpperBound.ForeColor = Color.Gray;
             }
         }
     }
