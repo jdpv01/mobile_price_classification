@@ -106,8 +106,14 @@ namespace mobile_price_classification
 
         private void BTNSearchString_Click(object sender, EventArgs e)
         {
-            DM.FilterByValue(CBColumns.SelectedItem.ToString(),
+            try
+            {
+                DM.FilterByValue(CBColumns.SelectedItem.ToString(),
                 CBCategories.GetItemText(TBSearchEntry.Text));
+            }catch (Exception)
+            {
+                MessageBox.Show("Invalid entry.", "Error", MessageBoxButtons.OKCancel);
+            }
         }
 
         private void BTNSearchRange_Click(object sender, EventArgs e)
@@ -117,16 +123,13 @@ namespace mobile_price_classification
                 Double lower = Convert.ToDouble(TBLowerBound.Text);
                 Double upper = Convert.ToDouble(TBUpperBound.Text);
                 if (lower < upper)
-                {
                     DM.FilterByNumericRange(CBColumns.SelectedItem.ToString(), lower, upper);
-                }
                 else
-                {
                     MessageBox.Show("Upper bound should be higher than lower bound.", "Error", MessageBoxButtons.OKCancel);
-                }
+                
             }catch (FormatException)
             {
-                MessageBox.Show("Incorrect entry.", "Error", MessageBoxButtons.OKCancel);
+                MessageBox.Show("Invalid entry.", "Error", MessageBoxButtons.OKCancel);
             }
         }
 
