@@ -1,12 +1,7 @@
 ﻿using mobile_price_classification.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace mobile_price_classification
@@ -21,7 +16,7 @@ namespace mobile_price_classification
             DM = new DataAdmin();
         }
 
-        private void Open(object sender, EventArgs e)
+        private void BTNOpen_Click(object sender, EventArgs e)
         {
             CBColumns.Items.Clear();
             ClearStuff();

@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace mobile_price_classification.Model
 {
-    class DataAdmin
+    public class DataAdmin
     {
         public const string BP = "battery_power", CS = "clock_speed", DSIM = "dual_sim",
             IM = "int_memory", NC = "n_cores", PH = "px_height", PW = "px_width", RAM = "ram",
@@ -48,7 +44,7 @@ namespace mobile_price_classification.Model
         public void FilterByNumericRange(String column, Double lower, Double upper)
         {
             DataTable dt = DS.Tables[0];
-            dt.DefaultView.RowFilter = column+ " >= "+lower+ " AND "+column+ " <= "+upper;
+            dt.DefaultView.RowFilter = column+" >= "+lower+" AND "+column+" <= "+upper;
         }
 
         public DataSet GetDS => DS;

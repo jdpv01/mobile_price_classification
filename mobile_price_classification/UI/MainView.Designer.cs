@@ -58,7 +58,7 @@ namespace mobile_price_classification
             this.BTNOpen.TabIndex = 1;
             this.BTNOpen.Text = "Open";
             this.BTNOpen.UseVisualStyleBackColor = true;
-            this.BTNOpen.Click += new System.EventHandler(this.Open);
+            this.BTNOpen.Click += new System.EventHandler(this.BTNOpen_Click);
             // 
             // CBColumns
             // 
