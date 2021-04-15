@@ -29,6 +29,12 @@ namespace mobile_price_classification
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.DataGridView1 = new System.Windows.Forms.DataGridView();
             this.BTNOpen = new System.Windows.Forms.Button();
             this.CBColumns = new System.Windows.Forms.ComboBox();
@@ -39,7 +45,11 @@ namespace mobile_price_classification
             this.TBSearchEntry = new System.Windows.Forms.TextBox();
             this.BTNSearchString = new System.Windows.Forms.Button();
             this.BTNRestore = new System.Windows.Forms.Button();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
             // DataGridView1
@@ -58,7 +68,7 @@ namespace mobile_price_classification
             this.BTNOpen.TabIndex = 1;
             this.BTNOpen.Text = "Open";
             this.BTNOpen.UseVisualStyleBackColor = true;
-            this.BTNOpen.Click += new System.EventHandler(this.Open);
+            this.BTNOpen.Click += new System.EventHandler(this.BTNOpen_Click);
             // 
             // CBColumns
             // 
@@ -142,12 +152,50 @@ namespace mobile_price_classification
             this.BTNRestore.Visible = false;
             this.BTNRestore.Click += new System.EventHandler(this.BTNRestore_Click);
             // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(337, 373);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Amount per cores count";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(300, 185);
+            this.chart1.TabIndex = 10;
+            this.chart1.Text = "chart1";
+            this.chart1.Visible = false;
+            // 
+            // chart2
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
+            this.chart2.Location = new System.Drawing.Point(644, 374);
+            this.chart2.Name = "chart2";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Label = "#PERCENT";
+            series2.Legend = "Legend1";
+            series2.Name = "A";
+            this.chart2.Series.Add(series2);
+            this.chart2.Size = new System.Drawing.Size(215, 185);
+            this.chart2.TabIndex = 11;
+            this.chart2.Text = "chart2";
+            this.chart2.Visible = false;
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.chart2);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.BTNRestore);
             this.Controls.Add(this.BTNSearchString);
             this.Controls.Add(this.TBSearchEntry);
@@ -161,6 +209,8 @@ namespace mobile_price_classification
             this.Name = "MainView";
             this.Text = "Mobile Price Classifier";
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,6 +228,8 @@ namespace mobile_price_classification
         private System.Windows.Forms.TextBox TBSearchEntry;
         private System.Windows.Forms.Button BTNSearchString;
         private System.Windows.Forms.Button BTNRestore;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
     }
 }
 
