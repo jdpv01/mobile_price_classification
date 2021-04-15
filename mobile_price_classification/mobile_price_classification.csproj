@@ -48,6 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\DataAdmin.cs" />
+    <Compile Include="UI\ChartsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ChartsView.Designer.cs">
+      <DependentUpon>ChartsView.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\MainView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\ChartsView.resx">
+      <DependentUpon>ChartsView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>

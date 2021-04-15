@@ -8,3 +8,4 @@ C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classific
 C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.csproj.CoreCompileInputs.cache
 C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.exe
 C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.pdb
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.UI.ChartsView.resources
