@@ -21,23 +21,26 @@ namespace mobile_price_classification
         {
             CBColumns.Items.Clear();
             ClearStuff();
-            BTNRestore.Visible = true;
             OpenFileDialog ofd = new OpenFileDialog
             {
                 Filter = "Excel | *.xls;*.xlsx;",
                 Title = "Select File"
             };
             if (ofd.ShowDialog() == DialogResult.OK)
-            {
                 DataGridView1.DataSource = DA.SetDataBaseConnection(ofd.FileName);
-            }
-
-            DataTable dt = DA.GetDT;
-            foreach (DataColumn column in dt.Columns)
+            try
             {
-                CBColumns.Items.Add(column.ColumnName);
+                DataTable dt = DA.GetDT;
+                foreach (DataColumn column in dt.Columns)
+                {
+                    CBColumns.Items.Add(column.ColumnName);
+                }
+                BTNRestore.Visible = true;
+                GenerateCharts();
             }
-            GenerateCharts();
+            catch (NullReferenceException)
+            {
+            }          
         }
 
         private void GenerateCharts()
@@ -46,14 +49,17 @@ namespace mobile_price_classification
             chart1.Titles.Clear();
             chart2.Series["A"].Points.Clear();
             chart2.Titles.Clear();
+            chart3.Series["Amount per clock speed class"].Points.Clear();
+            chart3.Titles.Clear();
             CreateChart1();
             CreateChart2();
+            CreateChart3();
         }
 
         private void CreateChart1()
         {
             chart1.Visible = true;
-            chart1.Titles.Add("Number of mobile phones per core count");
+            chart1.Titles.Add("Mobile phones per core count");
             IDictionary<string, int> counts = DA.CountRows(DataAdmin.NC);
             foreach (string value in counts.Keys)
                 chart1.Series["Amount per cores count"].Points.AddXY(value, counts[value]);
@@ -71,6 +77,11 @@ namespace mobile_price_classification
                 chart2.Series["A"].Points[i].LegendText = value;
                 i++;
             }
+        }
+
+        private void CreateChart3()
+        {
+            
         }
 
         private void BTNRestore_Click(object sender, EventArgs e)

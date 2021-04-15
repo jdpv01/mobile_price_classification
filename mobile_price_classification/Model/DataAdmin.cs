@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
+using System.Linq;
 
 namespace mobile_price_classification.Model
 {
@@ -66,6 +67,7 @@ namespace mobile_price_classification.Model
             }
             return counts;
         }
+
 
         public DataTable GetDT => DT;
     }
