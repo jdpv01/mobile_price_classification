@@ -31,6 +31,9 @@ namespace mobile_price_classification
             Marshal.Copy(fontdata, 0, data, fontLength);
             pfc.AddMemoryFont(data, fontLength);
             BTNOpen.Font = new Font(pfc.Families[0], BTNOpen.Font.Size);
+            BTNRestore.Font = new Font(pfc.Families[0], BTNOpen.Font.Size);
+            BTNCharts.Font = new Font(pfc.Families[0], BTNOpen.Font.Size);
+            BTNSearchString.Font = new Font(pfc.Families[0], BTNOpen.Font.Size);
         }
 
         private void BTNOpen_Click(object sender, EventArgs e)
