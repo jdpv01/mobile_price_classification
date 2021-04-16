@@ -3,12 +3,9 @@ using mobile_price_classification.UI;
 using System;
 using System.Data;
 using System.Drawing;
-<<<<<<< HEAD
-=======
 using System.Drawing.Text;
 using System.Runtime.InteropServices;
 using System.Threading;
->>>>>>> 0d49778d5c8b3d71dc7bd55a345c628a6506280f
 using System.Windows.Forms;
 
 namespace mobile_price_classification
@@ -27,13 +24,13 @@ namespace mobile_price_classification
 
         public void InitCustomFont()
         {
-            PrivateFontCollection pfc = new PrivateFontCollection();
-            int fontLength = Properties.Resources.outside.Length;
-            byte[] fontdata = Properties.Resources.outside;
-            System.IntPtr data = Marshal.AllocCoTaskMem(fontLength);
-            Marshal.Copy(fontdata, 0, data, fontLength);
-            pfc.AddMemoryFont(data, fontLength);
-            BTNOpen.Font = new Font(pfc.Families[0], BTNOpen.Font.Size);
+            //PrivateFontCollection pfc = new PrivateFontCollection();
+            //int fontLength = Properties.Resources.outside.Length;
+            //byte[] fontdata = Properties.Resources.outside;
+            //System.IntPtr data = Marshal.AllocCoTaskMem(fontLength);
+            //Marshal.Copy(fontdata, 0, data, fontLength);
+            //pfc.AddMemoryFont(data, fontLength);
+            //BTNOpen.Font = new Font(pfc.Families[0], BTNOpen.Font.Size);
         }
 
         private void BTNOpen_Click(object sender, EventArgs e)
@@ -204,6 +201,11 @@ namespace mobile_price_classification
             catch (NullReferenceException)
             {
             }
+        }
+
+        private void MainView_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

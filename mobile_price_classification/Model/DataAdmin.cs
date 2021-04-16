@@ -65,7 +65,33 @@ namespace mobile_price_classification.Model
             }
             return counts;
         }
-
+        public String[] MaxMinValue(String column, String column2, String valueC2)
+        {
+            String[] result = new string[3];
+            List<String> names = new List<string>();
+            foreach(DataRow row in DT.Rows)
+            {
+                if (row[column] != DBNull.Value && row[column2].ToString()==valueC2)
+                    names.Add(row[column].ToString());
+            }
+            int max = 0;
+            int min = 100000;
+            foreach (string value in names)
+            {
+                if(int.Parse(value) > max)
+                {
+                    max = int.Parse(value);
+                }
+                if (int.Parse(value) < min)
+                {
+                    min = int.Parse(value);
+                }
+            }
+            result[0] = valueC2;
+            result[1] = min.ToString();
+            result[2] = max.ToString();
+            return result;
+        }
         public List<double[]> CreateIntervalsClockSpeed()
         {
             double[] interval1 = { 0.5, 1.0, 0 }; double[] interval2 = { 1.0, 1.5, 0 };
