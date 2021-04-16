@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -18,6 +20,18 @@ namespace mobile_price_classification
         {
             InitializeComponent();
             DataAdmin = new DataAdmin();
+            InitCustomFont();
+        }
+
+        public void InitCustomFont()
+        {
+            PrivateFontCollection pfc = new PrivateFontCollection();
+            int fontLength = Properties.Resources.outside.Length;
+            byte[] fontdata = Properties.Resources.outside;
+            System.IntPtr data = Marshal.AllocCoTaskMem(fontLength);
+            Marshal.Copy(fontdata, 0, data, fontLength);
+            pfc.AddMemoryFont(data, fontLength);
+            BTNOpen.Font = new Font(pfc.Families[0], BTNOpen.Font.Size);
         }
 
         private void BTNOpen_Click(object sender, EventArgs e)
