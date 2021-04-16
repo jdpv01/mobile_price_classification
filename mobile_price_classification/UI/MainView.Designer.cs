@@ -171,6 +171,7 @@ namespace mobile_price_classification
             this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 11F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(712, 475);
             this.Controls.Add(this.BTNCharts);
             this.Controls.Add(this.BTNRestore);
