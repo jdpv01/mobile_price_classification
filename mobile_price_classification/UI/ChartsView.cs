@@ -1,4 +1,5 @@
 ﻿using mobile_price_classification.Model;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -33,7 +34,7 @@ namespace mobile_price_classification.UI
         private void CreateChart1()
         {
             chart1.Visible = true;
-            chart1.Titles.Add("Mobile phones per core count");
+            chart1.Titles.Add("Amount of Mobile phones per core count");
             IDictionary<string, int> counts = DataAdmin.CountRows(DataAdmin.NC);
             foreach (string value in counts.Keys)
                 chart1.Series["Amount per cores count"].Points.AddXY(value, counts[value]);
@@ -55,7 +56,16 @@ namespace mobile_price_classification.UI
 
         private void CreateChart3()
         {
-
+            chart3.Visible = true;
+            chart3.Titles.Add("Amount of mobile phones by clock speed");
+            List<double[]> intervals = DataAdmin.CreateIntervalsClockSpeed();
+            int i = 0;
+            foreach (double[] interval in intervals)
+            {
+                chart3.Series["Amount per clock speed class"].Points.AddXY(interval[0]+"-"+interval[1],
+                    interval[2]);
+                Console.WriteLine(interval[2]);
+            }
         }
 
         public void ChartsView_FormClosed(object sender, FormClosedEventArgs e)

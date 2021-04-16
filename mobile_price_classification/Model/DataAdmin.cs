@@ -68,6 +68,36 @@ namespace mobile_price_classification.Model
             return counts;
         }
 
+        public List<double[]> CreateIntervalsClockSpeed()
+        {
+            double[] interval1 = { 0.5, 1.0, 0 }; double[] interval2 = { 1.0, 1.5, 0 };
+            double[] interval3 = { 1.5, 2.0, 0 }; double[] interval4 = { 2.0, 2.5, 0 };
+            double[] interval5 = { 2.5, 3.0, 0 };
+            foreach (DataRow row in DT.Rows)
+            {
+                if (row[CS] != DBNull.Value)
+                {
+                    double value = Convert.ToDouble(row[CS]);
+                    if (value >= interval1[0] && value < interval1[1])
+                        interval1[2]++;
+                    else if (value >= interval2[0] && value < interval2[1])
+                        interval2[2]++;
+                    else if (value >= interval3[0] && value < interval3[1])
+                        interval3[2]++;
+                    else if (value >= interval4[0] && value < interval4[1])
+                        interval4[2]++;
+                    else if (value >= interval5[0] && value <= interval5[1])
+                        interval5[2]++;
+                } 
+            }
+            List<double[]> intervals = new List<double[]>();
+            intervals.Add(interval1);
+            intervals.Add(interval2);
+            intervals.Add(interval3);
+            intervals.Add(interval4);
+            intervals.Add(interval5);
+            return intervals;
+        }
 
         public DataTable GetDT => DT;
     }

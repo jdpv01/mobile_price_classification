@@ -181,7 +181,13 @@ namespace mobile_price_classification
 
         private void MainView_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ChartsView.Close();
+            try
+            {
+                ChartsView.Close();
+            }
+            catch (NullReferenceException)
+            {
+            }
         }
     }
 }
