@@ -16,8 +16,6 @@ namespace mobile_price_classification.UI
             this.DataAdmin = DataAdmin;
             this.MainView = MainView;
             GenerateCharts();
-            String[] asw = DataAdmin.MaxMinValue(DataAdmin.BP, DataAdmin.NC, "1");
-            MessageBox.Show(asw[0]+" "+ asw[1]+" "+ asw[2]);
         }
 
         private void GenerateCharts()
@@ -73,7 +71,14 @@ namespace mobile_price_classification.UI
         }
         private void CreateChart4()
         {
-
+            chart4.Visible = true;
+            chart4.Titles.Add("Range of battery acording with cores");
+            for(int i = 1; i <= 8; i++)
+            {
+                String[] maxMin = DataAdmin.MaxMinValue(DataAdmin.BP, DataAdmin.NC, i.ToString());
+                chart4.Series["Battery per No cores"].Points.AddXY(i, int.Parse(maxMin[1]));
+                chart4.Series["Battery per No cores"].Points.AddXY(i, int.Parse(maxMin[2]));
+            }
         }
         public void ChartsView_FormClosed(object sender, FormClosedEventArgs e)
         {
