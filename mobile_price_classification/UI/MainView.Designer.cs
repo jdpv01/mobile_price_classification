@@ -29,6 +29,7 @@ namespace mobile_price_classification
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.DataGridView1 = new System.Windows.Forms.DataGridView();
             this.BTNOpen = new System.Windows.Forms.Button();
             this.CBColumns = new System.Windows.Forms.ComboBox();
@@ -183,6 +184,7 @@ namespace mobile_price_classification
             this.Controls.Add(this.BTNOpen);
             this.Controls.Add(this.DataGridView1);
             this.Font = new System.Drawing.Font("Outside", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "MainView";
             this.Text = "Mobile Price Classifier";
