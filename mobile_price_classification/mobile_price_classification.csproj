@@ -70,6 +70,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UI\ChartsView.resx">
       <DependentUpon>ChartsView.cs</DependentUpon>
@@ -78,6 +79,7 @@
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Data\train.xlsx" />
+    <None Include="fonts\outside.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
