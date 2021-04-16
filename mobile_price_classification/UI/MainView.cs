@@ -1,10 +1,8 @@
 ﻿using mobile_price_classification.Model;
 using mobile_price_classification.UI;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace mobile_price_classification
