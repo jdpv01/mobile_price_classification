@@ -1,4 +1,4 @@
-# mobile_price_classification
+# Mobile Price Classification
 Basic Machine Learning based program for data analysis.
 
 [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com) <br>
