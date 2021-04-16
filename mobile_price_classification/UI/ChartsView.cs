@@ -28,9 +28,12 @@ namespace mobile_price_classification.UI
             chart2.Titles.Clear();
             chart3.Series["Amount per clock speed class"].Points.Clear();
             chart3.Titles.Clear();
+            chart4.Series["Battery per No cores"].Points.Clear();
+            chart4.Titles.Clear();
             CreateChart1();
             CreateChart2();
             CreateChart3();
+            CreateChart4();
         }
 
         private void CreateChart1()
@@ -68,7 +71,10 @@ namespace mobile_price_classification.UI
                 Console.WriteLine(interval[2]);
             }
         }
+        private void CreateChart4()
+        {
 
+        }
         public void ChartsView_FormClosed(object sender, FormClosedEventArgs e)
         {
             MainView.EnableChartsButton();
