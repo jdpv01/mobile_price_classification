@@ -20,3 +20,14 @@ C:\Users\Ferna\Downloads\mobile_price_classification\mobile_price_classification
 C:\Users\Ferna\Downloads\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.csproj.CoreCompileInputs.cache
 C:\Users\Ferna\Downloads\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.exe
 C:\Users\Ferna\Downloads\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.pdb
+D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\bin\Debug\mobile_price_classification.exe.config
+D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\bin\Debug\mobile_price_classification.exe
+D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\bin\Debug\mobile_price_classification.pdb
+D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.csprojAssemblyReference.cache
+D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.Properties.Resources.resources
+D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.UI.ChartsView.resources
+D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.MainView.resources
+D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.csproj.GenerateResource.cache
+D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.csproj.CoreCompileInputs.cache
+D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.exe
+D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.pdb

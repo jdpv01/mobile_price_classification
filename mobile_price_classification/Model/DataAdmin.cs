@@ -65,7 +65,33 @@ namespace mobile_price_classification.Model
             }
             return counts;
         }
-
+        public String[] MaxMinValue(String column, String column2, String valueC2)
+        {
+            String[] result = new string[3];
+            List<String> names = new List<string>();
+            foreach(DataRow row in DT.Rows)
+            {
+                if (row[column] != DBNull.Value && row[column2].ToString()==valueC2)
+                    names.Add(row[column].ToString());
+            }
+            int max = 0;
+            int min = 100000;
+            foreach (string value in names)
+            {
+                if(int.Parse(value) > max)
+                {
+                    max = int.Parse(value);
+                }
+                if (int.Parse(value) < min)
+                {
+                    min = int.Parse(value);
+                }
+            }
+            result[0] = valueC2;
+            result[1] = min.ToString();
+            result[2] = max.ToString();
+            return result;
+        }
         public List<double[]> CreateIntervalsClockSpeed()
         {
             double[] interval1 = { 0.5, 1.0, 0 }; double[] interval2 = { 1.0, 1.5, 0 };
@@ -96,7 +122,41 @@ namespace mobile_price_classification.Model
             intervals.Add(interval5);
             return intervals;
         }
+        public List<int[]> CreateIntervalsRam()
+        {
+            int[] interval1 = { 256, 880, 0 }; int[] interval2 = { 880, 1504, 0 };
+            int[] interval3 = { 1504, 2128, 0 }; int[] interval4 = { 2128, 2752, 0 };
+            int[] interval5 = { 2752, 3376, 0 }; int[] interval6 = { 3376, 4000, 0 };
+            foreach(DataRow row in DT.Rows)
+            {
+                if(row[RAM] != DBNull.Value)
+                {
+                    double value = Convert.ToDouble(row[RAM]);
+                    if (value >= interval1[0] && value < interval1[1])
+                        interval1[2]++;
+                    else if (value >= interval2[0] && value < interval2[1])
+                        interval2[2]++;
+                    else if (value >= interval3[0] && value < interval3[1])
+                        interval3[2]++;
+                    else if (value >= interval4[0] && value < interval4[1])
+                        interval4[2]++;
+                    else if (value >= interval5[0] && value < interval5[1])
+                        interval5[2]++;
+                    else if (value >= interval6[0] && value < interval6[1])
+                        interval6[2]++;
+                }
+            }
+            List<int[]> intervals = new List<int[]>();
+            intervals.Add(interval1);
+            intervals.Add(interval2);
+            intervals.Add(interval3);
+            intervals.Add(interval4);
+            intervals.Add(interval5);
+            intervals.Add(interval6);
+            return intervals;
+        }
 
+        
         public DataTable GetDT => DT;
     }
 }

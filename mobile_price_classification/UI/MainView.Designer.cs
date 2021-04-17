@@ -73,7 +73,9 @@ namespace mobile_price_classification
             this.CBColumns.Location = new System.Drawing.Point(96, 460);
             this.CBColumns.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CBColumns.Name = "CBColumns";
+
             this.CBColumns.Size = new System.Drawing.Size(140, 24);
+
             this.CBColumns.TabIndex = 2;
             this.CBColumns.SelectedIndexChanged += new System.EventHandler(this.ColumnsCB_SelectedIndexChanged);
             // 
@@ -118,7 +120,9 @@ namespace mobile_price_classification
             this.CBCategories.Location = new System.Drawing.Point(245, 460);
             this.CBCategories.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CBCategories.Name = "CBCategories";
+
             this.CBCategories.Size = new System.Drawing.Size(140, 24);
+
             this.CBCategories.TabIndex = 6;
             this.CBCategories.Visible = false;
             this.CBCategories.SelectedIndexChanged += new System.EventHandler(this.CBCategories_SelectedIndexChanged);
@@ -173,7 +177,9 @@ namespace mobile_price_classification
             // 
             // MainView
             // 
+
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
@@ -189,12 +195,15 @@ namespace mobile_price_classification
             this.Controls.Add(this.CBColumns);
             this.Controls.Add(this.BTNOpen);
             this.Controls.Add(this.DataGridView1);
+
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
             this.Name = "MainView";
             this.Text = "Mobile Price Classifier";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainView_FormClosed);
+            this.Load += new System.EventHandler(this.MainView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

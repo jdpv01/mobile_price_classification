@@ -24,6 +24,7 @@ namespace mobile_price_classification
 
         public void InitCustomFont()
         {
+
             PrivateFontCollection pfc = new PrivateFontCollection();
             int fontLength = Properties.Resources.outside.Length;
             byte[] fontdata = Properties.Resources.outside;
@@ -34,6 +35,7 @@ namespace mobile_price_classification
             BTNRestore.Font = new Font(pfc.Families[0], BTNOpen.Font.Size);
             BTNCharts.Font = new Font(pfc.Families[0], BTNOpen.Font.Size);
             BTNSearchString.Font = new Font(pfc.Families[0], BTNOpen.Font.Size);
+
         }
 
         private void BTNOpen_Click(object sender, EventArgs e)
@@ -204,6 +206,11 @@ namespace mobile_price_classification
             catch (NullReferenceException)
             {
             }
+        }
+
+        private void MainView_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
