@@ -204,5 +204,10 @@ namespace mobile_price_classification
             {
             }
         }
+
+        private void MainView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

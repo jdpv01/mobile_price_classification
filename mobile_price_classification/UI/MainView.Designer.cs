@@ -104,6 +104,7 @@ namespace mobile_price_classification
             // 
             // BTNSearchRange
             // 
+            this.BTNSearchRange.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNSearchRange.Location = new System.Drawing.Point(96, 525);
             this.BTNSearchRange.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BTNSearchRange.Name = "BTNSearchRange";
@@ -203,6 +204,7 @@ namespace mobile_price_classification
             this.Name = "MainView";
             this.Text = "Mobile Price Classifier";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainView_FormClosed);
+            this.Load += new System.EventHandler(this.MainView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

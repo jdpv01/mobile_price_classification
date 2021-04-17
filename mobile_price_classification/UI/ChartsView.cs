@@ -26,9 +26,15 @@ namespace mobile_price_classification.UI
             chart2.Titles.Clear();
             chart3.Series["Amount per clock speed class"].Points.Clear();
             chart3.Titles.Clear();
+            chart4.Series["Battery per No cores"].Points.Clear();
+            chart4.Titles.Clear();
+            chart5.Series["Amount per ram"].Points.Clear();
+            chart5.Titles.Clear();
             CreateChart1();
             CreateChart2();
             CreateChart3();
+            CreateChart4();
+            CreateChart5();
         }
 
         private void CreateChart1()
@@ -65,7 +71,28 @@ namespace mobile_price_classification.UI
                     interval[2]);
             }
         }
-
+        private void CreateChart4()
+        {
+            chart4.Visible = true;
+            chart4.Titles.Add("Range of battery acording with cores");
+            for(int i = 1; i <= 8; i++)
+            {
+                String[] maxMin = DataAdmin.MaxMinValue(DataAdmin.BP, DataAdmin.NC, i.ToString());
+                chart4.Series["Battery per No cores"].Points.AddXY(i, int.Parse(maxMin[1]));
+                chart4.Series["Battery per No cores"].Points.AddXY(i, int.Parse(maxMin[2]));
+            }
+        }
+        private void CreateChart5()
+        {
+            chart5.Visible = true;
+            chart5.Titles.Add("Amount of mobiles per ram intervals");
+            List<int[]> intervals = DataAdmin.CreateIntervalsRam();
+            foreach(int[] interval in intervals)
+            {
+                chart5.Series["Amount per ram"].Points.AddXY(interval[0] + "-" + interval[1], interval[2]);
+            }
+            chart5.Series["Amount per ram"].IsValueShownAsLabel = true;
+        }
         public void ChartsView_FormClosed(object sender, FormClosedEventArgs e)
         {
             MainView.EnableChartsButton();
