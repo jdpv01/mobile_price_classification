@@ -28,10 +28,13 @@ namespace mobile_price_classification.UI
             chart3.Titles.Clear();
             chart4.Series["Battery per No cores"].Points.Clear();
             chart4.Titles.Clear();
+            chart5.Series["Amount per price range"].Points.Clear();
+            chart5.Titles.Clear();
             CreateChart1();
             CreateChart2();
             CreateChart3();
             CreateChart4();
+            CreateChart5();
         }
 
         private void CreateChart1()
@@ -84,9 +87,12 @@ namespace mobile_price_classification.UI
         {
             chart5.Visible = true;
             chart5.Titles.Add("Amount of mobiles per price range");
-            IDictionary<string, int> counts = DataAdmin.CountRows(DataAdmin.PR);
-            
+            IDictionary<string, int> counts = DataAdmin.CountRows(DataAdmin.PR);        
             chart5.Series["Amount per price range"].Points.DataBindXY(counts.Keys, counts.Values);
+            chart5.Series["Amount per price range"].Points[0].LegendText = "Baja";
+            chart5.Series["Amount per price range"].Points[1].LegendText = "Media";
+            chart5.Series["Amount per price range"].Points[2].LegendText = "Alta";
+            chart5.Series["Amount per price range"].Points[3].LegendText = "Premium";
         }
         public void ChartsView_FormClosed(object sender, FormClosedEventArgs e)
         {
