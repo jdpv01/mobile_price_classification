@@ -93,6 +93,8 @@ namespace mobile_price_classification.UI
             chart5.Series["Amount per price range"].Points[1].LegendText = "Media";
             chart5.Series["Amount per price range"].Points[2].LegendText = "Alta";
             chart5.Series["Amount per price range"].Points[3].LegendText = "Premium";
+            chart5.Series["Amount per price range"].IsValueShownAsLabel = true;
+           
         }
         public void ChartsView_FormClosed(object sender, FormClosedEventArgs e)
         {
