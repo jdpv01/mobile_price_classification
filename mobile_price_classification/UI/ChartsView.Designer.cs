@@ -140,7 +140,7 @@ namespace mobile_price_classification.UI
             series5.ChartArea = "ChartArea1";
             series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Funnel;
             series5.Legend = "Legend1";
-            series5.Name = "Amount per price range";
+            series5.Name = "Amount per ram";
             series5.YValuesPerPoint = 2;
             this.chart5.Series.Add(series5);
             this.chart5.Size = new System.Drawing.Size(300, 300);

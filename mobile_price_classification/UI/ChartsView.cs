@@ -28,7 +28,7 @@ namespace mobile_price_classification.UI
             chart3.Titles.Clear();
             chart4.Series["Battery per No cores"].Points.Clear();
             chart4.Titles.Clear();
-            chart5.Series["Amount per price range"].Points.Clear();
+            chart5.Series["Amount per ram"].Points.Clear();
             chart5.Titles.Clear();
             CreateChart1();
             CreateChart2();
@@ -86,15 +86,13 @@ namespace mobile_price_classification.UI
         private void CreateChart5()
         {
             chart5.Visible = true;
-            chart5.Titles.Add("Amount of mobiles per price range");
-            IDictionary<string, int> counts = DataAdmin.CountRows(DataAdmin.PR);       
-            chart5.Series["Amount per price range"].Points.DataBindXY(counts.Keys, counts.Values);
-            chart5.Series["Amount per price range"].Points[0].LegendText = "Baja";
-            chart5.Series["Amount per price range"].Points[1].LegendText = "Media";
-            chart5.Series["Amount per price range"].Points[2].LegendText = "Alta";
-            chart5.Series["Amount per price range"].Points[3].LegendText = "Premium";
-            chart5.Series["Amount per price range"].IsValueShownAsLabel = true;
-           
+            chart5.Titles.Add("Amount of mobiles per ram intervals");
+            List<int[]> intervals = DataAdmin.CreateIntervalsRam();
+            foreach(int[] interval in intervals)
+            {
+                chart5.Series["Amount per ram"].Points.AddXY(interval[0] + "-" + interval[1], interval[2]);
+            }
+            chart5.Series["Amount per ram"].IsValueShownAsLabel = true;
         }
         public void ChartsView_FormClosed(object sender, FormClosedEventArgs e)
         {
