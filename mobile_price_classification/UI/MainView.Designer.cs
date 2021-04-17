@@ -204,7 +204,6 @@ namespace mobile_price_classification
             this.Name = "MainView";
             this.Text = "Mobile Price Classifier";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainView_FormClosed);
-            this.Load += new System.EventHandler(this.MainView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

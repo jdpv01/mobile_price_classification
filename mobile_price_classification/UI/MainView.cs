@@ -63,7 +63,7 @@ namespace mobile_price_classification
 
         private void BTNCharts_Click(object sender, EventArgs e)
         {
-            ChartsView = new ChartsView(this, DataAdmin);
+            ChartsView = new ChartsView(this);
             ChartsView.Show();
             BTNCharts.Enabled = false;
         }
@@ -205,9 +205,6 @@ namespace mobile_price_classification
             }
         }
 
-        private void MainView_Load(object sender, EventArgs e)
-        {
-
-        }
+        public DataAdmin GetDataAdmin => DataAdmin;
     }
 }

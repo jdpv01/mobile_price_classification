@@ -8,12 +8,10 @@ namespace mobile_price_classification.UI
     public partial class ChartsView : Form
     {
         private readonly MainView MainView;
-        private readonly DataAdmin DataAdmin;
 
-        public ChartsView(MainView MainView, DataAdmin DataAdmin)
+        public ChartsView(MainView MainView)
         {
             InitializeComponent();
-            this.DataAdmin = DataAdmin;
             this.MainView = MainView;
             GenerateCharts();
         }
@@ -41,7 +39,7 @@ namespace mobile_price_classification.UI
         {
             chart1.Visible = true;
             chart1.Titles.Add("Amount of Mobile phones per core count");
-            IDictionary<string, int> counts = DataAdmin.CountRows(DataAdmin.NC);
+            IDictionary<string, int> counts = MainView.GetDataAdmin.CountRows(DataAdmin.NC);
             foreach (string value in counts.Keys)
                 chart1.Series["Amount per cores count"].Points.AddXY(value, counts[value]);
         }
@@ -50,7 +48,7 @@ namespace mobile_price_classification.UI
         {
             chart2.Visible = true;
             chart2.Titles.Add("Percentage of mobile phones with dual sim");
-            IDictionary<string, int> counts = DataAdmin.CountRows(DataAdmin.DSIM);
+            IDictionary<string, int> counts = MainView.GetDataAdmin.CountRows(DataAdmin.DSIM);
             int i = 0;
             foreach (string value in counts.Keys)
             {
@@ -64,7 +62,7 @@ namespace mobile_price_classification.UI
         {
             chart3.Visible = true;
             chart3.Titles.Add("Amount of mobile phones by clock speed");
-            List<double[]> intervals = DataAdmin.CreateIntervalsClockSpeed();
+            List<double[]> intervals = MainView.GetDataAdmin.CreateIntervalsClockSpeed();
             foreach (double[] interval in intervals)
             {
                 chart3.Series["Amount per clock speed class"].Points.AddXY(interval[0]+"-"+interval[1],
@@ -77,7 +75,7 @@ namespace mobile_price_classification.UI
             chart4.Titles.Add("Range of battery acording with cores");
             for(int i = 1; i <= 8; i++)
             {
-                String[] maxMin = DataAdmin.MaxMinValue(DataAdmin.BP, DataAdmin.NC, i.ToString());
+                String[] maxMin = MainView.GetDataAdmin.MaxMinValue(DataAdmin.BP, DataAdmin.NC, i.ToString());
                 chart4.Series["Battery per No cores"].Points.AddXY(i, int.Parse(maxMin[1]));
                 chart4.Series["Battery per No cores"].Points.AddXY(i, int.Parse(maxMin[2]));
             }
@@ -86,13 +84,14 @@ namespace mobile_price_classification.UI
         {
             chart5.Visible = true;
             chart5.Titles.Add("Amount of mobiles per ram intervals");
-            List<int[]> intervals = DataAdmin.CreateIntervalsRam();
+            List<int[]> intervals = MainView.GetDataAdmin.CreateIntervalsRam();
             foreach(int[] interval in intervals)
             {
                 chart5.Series["Amount per ram"].Points.AddXY(interval[0] + "-" + interval[1], interval[2]);
             }
             chart5.Series["Amount per ram"].IsValueShownAsLabel = true;
         }
+
         public void ChartsView_FormClosed(object sender, FormClosedEventArgs e)
         {
             MainView.EnableChartsButton();
