@@ -88,12 +88,14 @@ namespace mobile_price_classification.Model
                         interval5[2]++;
                 } 
             }
-            List<double[]> intervals = new List<double[]>();
-            intervals.Add(interval1);
-            intervals.Add(interval2);
-            intervals.Add(interval3);
-            intervals.Add(interval4);
-            intervals.Add(interval5);
+            List<double[]> intervals = new List<double[]>
+            {
+                interval1,
+                interval2,
+                interval3,
+                interval4,
+                interval5
+            };
             return intervals;
         }
 
