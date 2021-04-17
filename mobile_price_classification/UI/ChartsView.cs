@@ -80,6 +80,14 @@ namespace mobile_price_classification.UI
                 chart4.Series["Battery per No cores"].Points.AddXY(i, int.Parse(maxMin[2]));
             }
         }
+        private void CreateChart5()
+        {
+            chart5.Visible = true;
+            chart5.Titles.Add("Amount of mobiles per price range");
+            IDictionary<string, int> counts = DataAdmin.CountRows(DataAdmin.PR);
+            
+            chart5.Series["Amount per price range"].Points.DataBindXY(counts.Keys, counts.Values);
+        }
         public void ChartsView_FormClosed(object sender, FormClosedEventArgs e)
         {
             MainView.EnableChartsButton();
