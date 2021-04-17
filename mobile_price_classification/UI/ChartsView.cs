@@ -59,12 +59,10 @@ namespace mobile_price_classification.UI
             chart3.Visible = true;
             chart3.Titles.Add("Amount of mobile phones by clock speed");
             List<double[]> intervals = DataAdmin.CreateIntervalsClockSpeed();
-            int i = 0;
             foreach (double[] interval in intervals)
             {
                 chart3.Series["Amount per clock speed class"].Points.AddXY(interval[0]+"-"+interval[1],
                     interval[2]);
-                Console.WriteLine(interval[2]);
             }
         }
 
