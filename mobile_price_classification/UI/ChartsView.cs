@@ -87,7 +87,7 @@ namespace mobile_price_classification.UI
         {
             chart5.Visible = true;
             chart5.Titles.Add("Amount of mobiles per price range");
-            IDictionary<string, int> counts = DataAdmin.CountRows(DataAdmin.PR);        
+            IDictionary<string, int> counts = DataAdmin.CountRows(DataAdmin.PR);       
             chart5.Series["Amount per price range"].Points.DataBindXY(counts.Keys, counts.Values);
             chart5.Series["Amount per price range"].Points[0].LegendText = "Baja";
             chart5.Series["Amount per price range"].Points[1].LegendText = "Media";

@@ -122,7 +122,41 @@ namespace mobile_price_classification.Model
             intervals.Add(interval5);
             return intervals;
         }
+        public List<int[]> CreateIntervalsRam()
+        {
+            int[] interval1 = { 256, 880, 0 }; int[] interval2 = { 880, 1504, 0 };
+            int[] interval3 = { 1504, 2128, 0 }; int[] interval4 = { 2128, 2752, 0 };
+            int[] interval5 = { 2752, 3376, 0 }; int[] interval6 = { 3376, 4000, 0 };
+            foreach(DataRow row in DT.Rows)
+            {
+                if(row[RAM] != DBNull.Value)
+                {
+                    double value = Convert.ToDouble(row[RAM]);
+                    if (value >= interval1[0] && value < interval1[1])
+                        interval1[2]++;
+                    else if (value >= interval2[0] && value < interval2[1])
+                        interval2[2]++;
+                    else if (value >= interval3[0] && value < interval3[1])
+                        interval3[2]++;
+                    else if (value >= interval4[0] && value < interval4[1])
+                        interval4[2]++;
+                    else if (value >= interval5[0] && value < interval5[1])
+                        interval5[2]++;
+                    else if (value >= interval6[0] && value < interval6[1])
+                        interval6[2]++;
+                }
+            }
+            List<int[]> intervals = new List<int[]>();
+            intervals.Add(interval1);
+            intervals.Add(interval2);
+            intervals.Add(interval3);
+            intervals.Add(interval4);
+            intervals.Add(interval5);
+            intervals.Add(interval6);
+            return intervals;
+        }
 
+        
         public DataTable GetDT => DT;
     }
 }
