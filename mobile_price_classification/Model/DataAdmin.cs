@@ -150,13 +150,15 @@ namespace mobile_price_classification.Model
                         interval6[2]++;
                 }
             }
-            List<int[]> intervals = new List<int[]>();
-            intervals.Add(interval1);
-            intervals.Add(interval2);
-            intervals.Add(interval3);
-            intervals.Add(interval4);
-            intervals.Add(interval5);
-            intervals.Add(interval6);
+            List<int[]> intervals = new List<int[]>
+            {
+                interval1,
+                interval2,
+                interval3,
+                interval4,
+                interval5,
+                interval6
+            };
             return intervals;
         }
 
