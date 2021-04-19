@@ -7,4 +7,7 @@ Basic Machine Learning based program for data analysis.
 - Nicolas Colmenares: [NickEsColR](https://github.com/NickEsColR)<br>
 - Kevin Fernandez: [kevinAndresF](https://github.com/kevinAndresF)<br>
 
+## Video
+You can see a preview here: https://youtu.be/8zdfB2ryd7w
+
 [![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)](https://forthebadge.com)
