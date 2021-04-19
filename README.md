@@ -10,12 +10,18 @@ Basic Machine Learning based program for data analysis of mobile prices, based o
 - Kevin Fernandez: [kevinAndresF](https://github.com/kevinAndresF)<br>
 
 ## Design and analysis
+
 ### Spanish version
-Engineer's method: [***link***]
+Engineer's method: [***link***](docs/METODO_INGENIERIA.pdf) <br>
+Requirements: [***link***](docs/requerimientos.pdf) <br>
 
 ### English version
-Engineer's method: [***link***]() <br>
-Requirements: [***link***]
+Engineer's method: [***link***](docs/Engineering_Method.pdf) <br>
+Requirements: [***link***](docs/REQUIREMENTS.pdf) <br>
+
+### Diagrams
+Object diagram:[***link***](docs/Object diagram.pdf) <br>
+Class diagram [***link***](docs/Class diagram.pdf) <br>
 
 ## Video
 You can see a preview here: https://youtu.be/8zdfB2ryd7w
