@@ -19,7 +19,7 @@ namespace mobile_price_classification
         {
             InitializeComponent();
             DataAdmin = new DataAdmin();
-            InitCustomFont();
+            //InitCustomFont();
         }
 
         public void InitCustomFont()
