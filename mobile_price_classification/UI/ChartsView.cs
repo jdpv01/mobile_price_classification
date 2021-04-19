@@ -75,9 +75,8 @@ namespace mobile_price_classification.UI
             chart4.Titles.Add("Range of battery acording with cores");
             for(int i = 1; i <= 8; i++)
             {
-                String[] maxMin = MainView.GetDataAdmin.MaxMinValue(DataAdmin.BP, DataAdmin.NC, i.ToString());
-                chart4.Series["Battery per No cores"].Points.AddXY(i, int.Parse(maxMin[1]));
-                chart4.Series["Battery per No cores"].Points.AddXY(i, int.Parse(maxMin[2]));
+                String[] maxMin = DataAdmin.MaxMinValue(DataAdmin.BP, DataAdmin.NC, i.ToString());
+                chart4.Series["Battery per No cores"].Points.AddXY(i.ToString(), int.Parse(maxMin[1]), int.Parse(maxMin[2]));
             }
         }
         private void CreateChart5()
