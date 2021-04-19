@@ -20,8 +20,8 @@ Engineer's method: [***link***](docs/Engineering_Method.pdf) <br>
 Requirements: [***link***](docs/REQUIREMENTS.pdf) <br>
 
 ### Diagrams
-Object diagram:[***link***](docs/Object diagram.pdf) <br>
-Class diagram [***link***](docs/Class diagram.pdf) <br>
+Object diagram:[***link***](docs/Object_diagram.pdf) <br>
+Class diagram [***link***](docs/Class_diagram.pdf) <br>
 
 ## Video
 You can see a preview here: https://youtu.be/8zdfB2ryd7w
