@@ -19,21 +19,7 @@ namespace mobile_price_classification
             InitializeComponent();
             DataAdmin = new DataAdmin();
             //InitCustomFont();
-        }
-
-        public void InitCustomFont()
-        {
-            //PrivateFontCollection pfc = new PrivateFontCollection();
-            //int fontLength = Properties.Resources.outside.Length;
-            //byte[] fontdata = Properties.Resources.outside;
-            //System.IntPtr data = Marshal.AllocCoTaskMem(fontLength);
-            //Marshal.Copy(fontdata, 0, data, fontLength);
-            //pfc.AddMemoryFont(data, fontLength);
-            //BTNOpen.Font = new Font(pfc.Families[0], BTNOpen.Font.Size);
-            //BTNRestore.Font = new Font(pfc.Families[0], BTNOpen.Font.Size);
-            //BTNCharts.Font = new Font(pfc.Families[0], BTNOpen.Font.Size);
-            //BTNSearchString.Font = new Font(pfc.Families[0], BTNOpen.Font.Size);
-        }   
+        }  
 
         private void BTNOpen_Click(object sender, EventArgs e)
         {
