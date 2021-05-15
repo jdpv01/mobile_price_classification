@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using DecisionTreeClassifierV2.Dataset;
-using System.Threading.Tasks;
+﻿using mobile_price_classification.DTree;
+using System;
 
-namespace DecisionTreeClassifierV2.DecisionTreeClassifier
+namespace mobile_price_classification.Dtree
 {
     [Serializable()]
     class DecisionNode : Node, ICloneable

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DecisionTreeClassifierV2.DecisionTreeClassifier
+namespace mobile_price_classification.DTree
 {
     [Serializable()]
     abstract class Node

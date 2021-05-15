@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DecisionTreeClassifierV2.Dataset;
 
-namespace DecisionTreeClassifierV2.DecisionTreeClassifier
+namespace mobile_price_classification.DTree
 {
     [Serializable()]
     class Leaf : Node, ICloneable

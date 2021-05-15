@@ -3,8 +3,6 @@ using mobile_price_classification.UI;
 using System;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Text;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace mobile_price_classification
