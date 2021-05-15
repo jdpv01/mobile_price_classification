@@ -59,15 +59,5 @@ namespace mobile_price_classification.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Byte[].
-        /// </summary>
-        internal static byte[] outside {
-            get {
-                object obj = ResourceManager.GetObject("outside", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
     }
 }
