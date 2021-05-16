@@ -10,7 +10,7 @@ namespace mobile_price_classification.Model
     {
         public const string BP = "battery_power", CS = "clock_speed", DSIM = "dual_sim",
             IM = "int_memory", NC = "n_cores", PH = "px_height", PW = "px_width", RAM = "ram",
-            TS = "touch_screen", WF = "wifi", PR = "price_range";
+            TS = "touch_screen", WF = "wifi", PR = "price_range", PRML = "price_range using ML";
         public const int TRAININGSET_SIZE = 499;
         private DataTable DT;
         private DecisionTree DecisionTree;
@@ -54,13 +54,18 @@ namespace mobile_price_classification.Model
             Datarow[] trainingSet = Datarow.GetDatarowsFromStringArray(BuildTrainingSetFromData());
             DecisionTree = new DecisionTree(trainingSet);
             DecisionTree.BuildTree();
+            ClassifyDataSet();
         }
 
         public void ClassifyDataSet()
         {
-            foreach (string line in BuildDataSetFromData())
+            string[] predictions = BuildDataSetFromData();
+            DT.Columns.Add(PRML, typeof(string));
+            int i = 0;
+            foreach (DataRow row in DT.Rows)
             {
-                Console.WriteLine(DecisionTree.Classify(new Datarow(line)).ToString());
+                row[PRML] = DecisionTree.Classify(new Datarow(predictions[i])).ToString();
+                i++;
             }
         }
 

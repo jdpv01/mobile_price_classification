@@ -19,10 +19,9 @@ namespace mobile_price_classification.DTree
 
         public override string ToString()
         {
-            string message = "Predict: { ";
-            foreach (Tuple<object, int> prediction in predictions) message += $"{prediction.Item1.ToString()}:{prediction.Item2} ";
-            message += "}";
-
+            string message = "";
+            foreach (Tuple<object, int> prediction in predictions) 
+                message += $"{prediction.Item1.ToString()}";
             return message;
         }
 

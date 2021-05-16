@@ -41,6 +41,7 @@ namespace mobile_price_classification
             this.BTNSearchString = new System.Windows.Forms.Button();
             this.BTNRestore = new System.Windows.Forms.Button();
             this.BTNCharts = new System.Windows.Forms.Button();
+            this.BTNClassify = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,6 +51,7 @@ namespace mobile_price_classification
             this.DataGridView1.Location = new System.Drawing.Point(2, 4);
             this.DataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DataGridView1.Name = "DataGridView1";
+            this.DataGridView1.RowHeadersWidth = 62;
             this.DataGridView1.Size = new System.Drawing.Size(991, 450);
             this.DataGridView1.TabIndex = 0;
             // 
@@ -74,7 +76,7 @@ namespace mobile_price_classification
             this.CBColumns.Location = new System.Drawing.Point(95, 461);
             this.CBColumns.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CBColumns.Name = "CBColumns";
-            this.CBColumns.Size = new System.Drawing.Size(140, 25);
+            this.CBColumns.Size = new System.Drawing.Size(140, 31);
             this.CBColumns.TabIndex = 2;
             this.CBColumns.SelectedIndexChanged += new System.EventHandler(this.ColumnsCB_SelectedIndexChanged);
             // 
@@ -84,7 +86,7 @@ namespace mobile_price_classification
             this.TBLowerBound.Location = new System.Drawing.Point(96, 494);
             this.TBLowerBound.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TBLowerBound.Name = "TBLowerBound";
-            this.TBLowerBound.Size = new System.Drawing.Size(81, 23);
+            this.TBLowerBound.Size = new System.Drawing.Size(81, 31);
             this.TBLowerBound.TabIndex = 3;
             this.TBLowerBound.Visible = false;
             this.TBLowerBound.Enter += new System.EventHandler(this.LowerBound_Enter);
@@ -96,7 +98,7 @@ namespace mobile_price_classification
             this.TBUpperBound.Location = new System.Drawing.Point(183, 494);
             this.TBUpperBound.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TBUpperBound.Name = "TBUpperBound";
-            this.TBUpperBound.Size = new System.Drawing.Size(81, 23);
+            this.TBUpperBound.Size = new System.Drawing.Size(81, 31);
             this.TBUpperBound.TabIndex = 4;
             this.TBUpperBound.Visible = false;
             this.TBUpperBound.Enter += new System.EventHandler(this.UpperBound_Enter);
@@ -123,7 +125,7 @@ namespace mobile_price_classification
             this.CBCategories.Location = new System.Drawing.Point(241, 461);
             this.CBCategories.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CBCategories.Name = "CBCategories";
-            this.CBCategories.Size = new System.Drawing.Size(140, 25);
+            this.CBCategories.Size = new System.Drawing.Size(140, 31);
             this.CBCategories.TabIndex = 6;
             this.CBCategories.Visible = false;
             this.CBCategories.SelectedIndexChanged += new System.EventHandler(this.CBCategories_SelectedIndexChanged);
@@ -134,7 +136,7 @@ namespace mobile_price_classification
             this.TBSearchEntry.Location = new System.Drawing.Point(96, 494);
             this.TBSearchEntry.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TBSearchEntry.Name = "TBSearchEntry";
-            this.TBSearchEntry.Size = new System.Drawing.Size(99, 23);
+            this.TBSearchEntry.Size = new System.Drawing.Size(99, 31);
             this.TBSearchEntry.TabIndex = 7;
             this.TBSearchEntry.Visible = false;
             // 
@@ -180,13 +182,28 @@ namespace mobile_price_classification
             this.BTNCharts.Visible = false;
             this.BTNCharts.Click += new System.EventHandler(this.BTNCharts_Click);
             // 
+            // BTNClassify
+            // 
+            this.BTNClassify.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNClassify.Location = new System.Drawing.Point(2, 559);
+            this.BTNClassify.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BTNClassify.Name = "BTNClassify";
+            this.BTNClassify.Size = new System.Drawing.Size(87, 28);
+            this.BTNClassify.TabIndex = 14;
+            this.BTNClassify.Text = "Classify";
+            this.BTNClassify.UseCompatibleTextRendering = true;
+            this.BTNClassify.UseVisualStyleBackColor = true;
+            this.BTNClassify.Visible = false;
+            this.BTNClassify.Click += new System.EventHandler(this.Classify_Click);
+            // 
             // MainView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(997, 600);
+            this.Controls.Add(this.BTNClassify);
             this.Controls.Add(this.BTNCharts);
             this.Controls.Add(this.BTNRestore);
             this.Controls.Add(this.BTNSearchString);
@@ -223,6 +240,7 @@ namespace mobile_price_classification
         private System.Windows.Forms.Button BTNSearchString;
         private System.Windows.Forms.Button BTNRestore;
         private System.Windows.Forms.Button BTNCharts;
+        private System.Windows.Forms.Button BTNClassify;
     }
 }
 
