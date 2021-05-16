@@ -48,14 +48,33 @@ namespace mobile_price_classification.Model
             DT.DefaultView.RowFilter = column+" >= "+lower+" AND "+column+" <= "+upper;
         }
 
-        public void BuildDecisionTree(string line)
+        public void BuildDecisionTree()
         {
-            Datarow[] datarows = Datarow.GetDatarowsFromCSV(line);
+            Datarow[] datarows = Datarow.GetDatarowsFromStringArray(BuildTrainingSetFromDataToString());
             DecisionTree = new DecisionTree(datarows);
             DecisionTree.BuildTree();
-            Console.WriteLine("qweq");
-            foreach (object value in DecisionTree.FindUniqueValues(datarows)) 
-                Console.WriteLine(value.ToString());    
+            foreach (object value in DecisionTree.FindUniqueValues(datarows))
+                Console.WriteLine(value.ToString());
+        }
+
+        private string[] BuildTrainingSetFromDataToString()
+        {
+            String[] trainingSet = new string[DT.Rows.Count];
+            int i = 0;
+            foreach (DataRow row in DT.Rows)
+            {
+                string line = "";
+                foreach (DataColumn column in DT.Columns)
+                {
+                    if (column == DT.Columns[DT.Columns.Count - 1])
+                        line += row[column].ToString();
+                    else
+                        line += row[column].ToString() + ";";
+                }
+                trainingSet[i] = line;
+                i++;
+            }
+            return trainingSet;
         }
 
         public IDictionary<string, int> CountRows(String column)

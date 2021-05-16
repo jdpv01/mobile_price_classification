@@ -30,7 +30,7 @@ namespace mobile_price_classification
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 DataGridView1.DataSource = DataAdmin.SetDataBaseConnection(ofd.FileName);
-                DataAdmin.BuildDecisionTree(ofd.FileName);
+                DataAdmin.BuildDecisionTree();
             }
                
             try
