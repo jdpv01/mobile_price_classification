@@ -50,14 +50,17 @@ namespace mobile_price_classification.Model
 
         public void BuildDecisionTree()
         {
-            Datarow[] datarows = Datarow.GetDatarowsFromStringArray(BuildTrainingSetFromDataToString());
-            DecisionTree = new DecisionTree(datarows);
-            DecisionTree.BuildTree();
-            foreach (object value in DecisionTree.FindUniqueValues(datarows))
-                Console.WriteLine(value.ToString());
+            Datarow[] trainingSet = Datarow.GetDatarowsFromStringArray(BuildTrainingSetFromData());
+            DecisionTree = new DecisionTree(trainingSet);
+            foreach(string line in BuildTrainingSetFromData())
+            {
+                Console.WriteLine(line);
+            }
+            
+            
         }
 
-        private string[] BuildTrainingSetFromDataToString()
+        private string[] BuildTrainingSetFromData()
         {
             String[] trainingSet = new string[DT.Rows.Count];
             int i = 0;
@@ -67,6 +70,27 @@ namespace mobile_price_classification.Model
                 foreach (DataColumn column in DT.Columns)
                 {
                     if (column == DT.Columns[DT.Columns.Count - 1])
+                        line += row[column].ToString();
+                    else
+                        line += row[column].ToString() + ";";
+                }
+                trainingSet[i] = line;
+                i++;
+            }
+            return trainingSet;
+        }
+
+        private string[] BuildDataSetFromData()
+        {
+            String[] trainingSet = new string[DT.Rows.Count];
+            int i = 0;
+            foreach (DataRow row in DT.Rows)
+            {
+                string line = "";
+                for (int j = 0; j < DT.Columns.Count-1; j++)
+                {
+                    DataColumn column = DT.Columns[j];
+                    if (column == DT.Columns[DT.Columns.Count - 2])
                         line += row[column].ToString();
                     else
                         line += row[column].ToString() + ";";
