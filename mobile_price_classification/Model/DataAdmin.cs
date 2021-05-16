@@ -11,7 +11,7 @@ namespace mobile_price_classification.Model
         public const string BP = "battery_power", CS = "clock_speed", DSIM = "dual_sim",
             IM = "int_memory", NC = "n_cores", PH = "px_height", PW = "px_width", RAM = "ram",
             TS = "touch_screen", WF = "wifi", PR = "price_range";
-        public const int TRAININGSET_SIZE = 99;
+        public const int TRAININGSET_SIZE = 499;
         private DataTable DT;
         private DecisionTree DecisionTree;
 
@@ -54,6 +54,14 @@ namespace mobile_price_classification.Model
             Datarow[] trainingSet = Datarow.GetDatarowsFromStringArray(BuildTrainingSetFromData());
             DecisionTree = new DecisionTree(trainingSet);
             DecisionTree.BuildTree();
+        }
+
+        public void ClassifyDataSet()
+        {
+            foreach (string line in BuildDataSetFromData())
+            {
+                Console.WriteLine(DecisionTree.Classify(new Datarow(line)).ToString());
+            }
         }
 
         private string[] BuildTrainingSetFromData()
