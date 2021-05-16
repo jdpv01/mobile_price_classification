@@ -3,7 +3,7 @@ using System;
 
 namespace mobile_price_classification.Dtree
 {
-    class DecisionNode : Node, ICloneable
+    class DecisionNode : Node
     {
         public Question Question { get; private set; }
         public Node TrueBranch { get; set; }

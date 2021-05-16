@@ -57,7 +57,7 @@ namespace mobile_price_classification.Model
             ClassifyDataSet();
         }
 
-        public void ClassifyDataSet()
+        private void ClassifyDataSet()
         {
             string[] predictions = BuildDataSetFromData();
             try
@@ -75,11 +75,6 @@ namespace mobile_price_classification.Model
                 row[PRML] = DecisionTree.Classify(new Datarow(predictions[i])).ToString();
                 i++;
             }
-        }
-
-        public void DeleteTree()
-        {
-            DecisionTree = null;
         }
 
         private string[] BuildTrainingSetFromData()
