@@ -30,7 +30,6 @@ namespace mobile_price_classification
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 DataGridView1.DataSource = DataAdmin.SetDataBaseConnection(ofd.FileName);
-                DataAdmin.BuildDecisionTree(ofd.FileName);
             }
                
             try
@@ -42,6 +41,7 @@ namespace mobile_price_classification
                 }
                 BTNRestore.Visible = true;
                 BTNCharts.Visible = true;
+                BTNClassify.Visible = true;
             }
             catch (NullReferenceException)
             {
@@ -142,6 +142,11 @@ namespace mobile_price_classification
             {
                 MessageBox.Show("Invalid entry.", "Error", MessageBoxButtons.OKCancel);
             }
+        }
+
+        private void Classify_Click(object sender, EventArgs e)
+        {
+            DataAdmin.BuildDecisionTree();
         }
 
         private void LowerBound_Enter(object sender, EventArgs e)

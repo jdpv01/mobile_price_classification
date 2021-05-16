@@ -10,7 +10,8 @@ namespace mobile_price_classification.Model
     {
         public const string BP = "battery_power", CS = "clock_speed", DSIM = "dual_sim",
             IM = "int_memory", NC = "n_cores", PH = "px_height", PW = "px_width", RAM = "ram",
-            TS = "touch_screen", WF = "wifi", PR = "price_range";
+            TS = "touch_screen", WF = "wifi", PR = "price_range", PRML = "price_range using ML";
+        public const int TRAININGSET_SIZE = 499;
         private DataTable DT;
         private DecisionTree DecisionTree;
 
@@ -48,14 +49,65 @@ namespace mobile_price_classification.Model
             DT.DefaultView.RowFilter = column+" >= "+lower+" AND "+column+" <= "+upper;
         }
 
-        public void BuildDecisionTree(string line)
+        public void BuildDecisionTree()
         {
-            Datarow[] datarows = Datarow.GetDatarowsFromCSV(line);
-            DecisionTree = new DecisionTree(datarows);
+            Datarow[] trainingSet = Datarow.GetDatarowsFromStringArray(BuildTrainingSetFromData());
+            DecisionTree = new DecisionTree(trainingSet);
             DecisionTree.BuildTree();
-            Console.WriteLine("qweq");
-            foreach (object value in DecisionTree.FindUniqueValues(datarows)) 
-                Console.WriteLine(value.ToString());    
+            ClassifyDataSet();
+        }
+
+        public void ClassifyDataSet()
+        {
+            string[] predictions = BuildDataSetFromData();
+            DT.Columns.Add(PRML, typeof(string));
+            int i = 0;
+            foreach (DataRow row in DT.Rows)
+            {
+                row[PRML] = DecisionTree.Classify(new Datarow(predictions[i])).ToString();
+                i++;
+            }
+        }
+
+        private string[] BuildTrainingSetFromData()
+        {
+            String[] trainingSet = new string[TRAININGSET_SIZE];
+            int i = 0;
+            foreach (DataRow row in DT.Rows)
+            {
+                string line = "";
+                foreach (DataColumn column in DT.Columns)
+                {
+                    if (column == DT.Columns[DT.Columns.Count - 1])
+                        line += row[column].ToString();
+                    else
+                        line += row[column].ToString() + ";";
+                }
+                trainingSet[i] = line;
+                if (i == TRAININGSET_SIZE - 1) break;
+                i++;
+            }
+            return trainingSet;
+        }
+
+        private string[] BuildDataSetFromData()
+        {
+            String[] dataset = new string[DT.Rows.Count];
+            int i = 0;
+            foreach (DataRow row in DT.Rows)
+            {
+                string line = "";
+                foreach (DataColumn column in DT.Columns)
+                {
+                    if (column == DT.Columns[DT.Columns.Count - 2])
+                        line += row[column].ToString();
+                    else
+                        line += row[column].ToString() + ";";
+                }
+                dataset[i] = line;
+                i++;
+            }
+            return dataset;
         }
 
         public IDictionary<string, int> CountRows(String column)

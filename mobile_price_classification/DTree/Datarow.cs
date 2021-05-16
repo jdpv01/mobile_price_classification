@@ -55,8 +55,8 @@ namespace mobile_price_classification.DTree
             {
                 string[] lines = File.ReadAllLines(path);
                 Datarow[] datarows = new Datarow[lines.Length];
-                for (int i = 0; i < lines.Length; i++) datarows[i] = new Datarow(lines[i]);
-
+                for (int i = 0; i < lines.Length; i++) 
+                    datarows[i] = new Datarow(lines[i]);
                 return datarows;
             }
             else throw new FileNotFoundException();
