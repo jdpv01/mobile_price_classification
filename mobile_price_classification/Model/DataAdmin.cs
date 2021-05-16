@@ -55,7 +55,7 @@ namespace mobile_price_classification.Model
             DecisionTree.BuildTree();
             Console.WriteLine("qweq");
             foreach (object value in DecisionTree.FindUniqueValues(datarows)) 
-                Console.WriteLine(value.ToString());
+                Console.WriteLine(value.ToString());    
         }
 
         public IDictionary<string, int> CountRows(String column)
