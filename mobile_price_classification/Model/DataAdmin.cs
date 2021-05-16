@@ -11,6 +11,7 @@ namespace mobile_price_classification.Model
         public const string BP = "battery_power", CS = "clock_speed", DSIM = "dual_sim",
             IM = "int_memory", NC = "n_cores", PH = "px_height", PW = "px_width", RAM = "ram",
             TS = "touch_screen", WF = "wifi", PR = "price_range";
+        public const int TRAININGSET_SIZE = 99;
         private DataTable DT;
         private DecisionTree DecisionTree;
 
@@ -52,17 +53,12 @@ namespace mobile_price_classification.Model
         {
             Datarow[] trainingSet = Datarow.GetDatarowsFromStringArray(BuildTrainingSetFromData());
             DecisionTree = new DecisionTree(trainingSet);
-            foreach(string line in BuildTrainingSetFromData())
-            {
-                Console.WriteLine(line);
-            }
-            
-            
+            DecisionTree.BuildTree();
         }
 
         private string[] BuildTrainingSetFromData()
         {
-            String[] trainingSet = new string[DT.Rows.Count];
+            String[] trainingSet = new string[TRAININGSET_SIZE];
             int i = 0;
             foreach (DataRow row in DT.Rows)
             {
@@ -75,6 +71,7 @@ namespace mobile_price_classification.Model
                         line += row[column].ToString() + ";";
                 }
                 trainingSet[i] = line;
+                if (i == TRAININGSET_SIZE - 1) break;
                 i++;
             }
             return trainingSet;
@@ -82,23 +79,22 @@ namespace mobile_price_classification.Model
 
         private string[] BuildDataSetFromData()
         {
-            String[] trainingSet = new string[DT.Rows.Count];
+            String[] dataset = new string[DT.Rows.Count];
             int i = 0;
             foreach (DataRow row in DT.Rows)
             {
                 string line = "";
-                for (int j = 0; j < DT.Columns.Count-1; j++)
+                foreach (DataColumn column in DT.Columns)
                 {
-                    DataColumn column = DT.Columns[j];
                     if (column == DT.Columns[DT.Columns.Count - 2])
                         line += row[column].ToString();
                     else
                         line += row[column].ToString() + ";";
                 }
-                trainingSet[i] = line;
+                dataset[i] = line;
                 i++;
             }
-            return trainingSet;
+            return dataset;
         }
 
         public IDictionary<string, int> CountRows(String column)
