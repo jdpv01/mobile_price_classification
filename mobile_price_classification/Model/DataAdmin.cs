@@ -1,4 +1,5 @@
-﻿using System;
+﻿using mobile_price_classification.DTree;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
@@ -11,6 +12,7 @@ namespace mobile_price_classification.Model
             IM = "int_memory", NC = "n_cores", PH = "px_height", PW = "px_width", RAM = "ram",
             TS = "touch_screen", WF = "wifi", PR = "price_range";
         private DataTable DT;
+        private DecisionTree DecisionTree;
 
         public DataAdmin() { } 
 
@@ -28,7 +30,7 @@ namespace mobile_price_classification.Model
             adapter.Fill(ds);
             Connector.Close();
             DT = ds.Tables[0];
-            return ds.Tables[0].DefaultView;
+            return DT.DefaultView;
         }
 
         public void RestoreDataBase()
@@ -44,6 +46,16 @@ namespace mobile_price_classification.Model
         public void FilterByNumericRange(String column, Double lower, Double upper)
         {
             DT.DefaultView.RowFilter = column+" >= "+lower+" AND "+column+" <= "+upper;
+        }
+
+        public void BuildDecisionTree(string line)
+        {
+            Datarow[] datarows = Datarow.GetDatarowsFromCSV(line);
+            DecisionTree = new DecisionTree(datarows);
+            DecisionTree.BuildTree();
+            Console.WriteLine("qweq");
+            foreach (object value in DecisionTree.FindUniqueValues(datarows)) 
+                Console.WriteLine(value.ToString());    
         }
 
         public IDictionary<string, int> CountRows(String column)

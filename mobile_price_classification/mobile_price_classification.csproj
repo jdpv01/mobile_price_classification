@@ -48,7 +48,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTree\Datarow.cs" />
+    <Compile Include="DTree\DecisionNode.cs" />
+    <Compile Include="DTree\DecisionTree.cs" />
+    <Compile Include="DTree\Leaf.cs" />
+    <Compile Include="DTree\Node.cs" />
+    <Compile Include="DTree\Question.cs" />
     <Compile Include="Model\DataAdmin.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UI\ChartsView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,14 +76,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="UI\ChartsView.resx">
       <DependentUpon>ChartsView.cs</DependentUpon>
     </EmbeddedResource>

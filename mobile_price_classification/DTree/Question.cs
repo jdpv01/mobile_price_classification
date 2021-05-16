@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DecisionTreeClassifierV2.DecisionTreeClassifier
+namespace mobile_price_classification.DTree
 {
     [Serializable()]
     class Question
@@ -22,7 +22,7 @@ namespace DecisionTreeClassifierV2.DecisionTreeClassifier
             return (obj is double || obj is int);
         }
 
-        public bool Match(Dataset.Datarow row)
+        public bool Match(Datarow row)
         {
             object rowValue = row[column];
             if(IsNumeric(rowValue) && IsNumeric(value))

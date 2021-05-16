@@ -1,15 +1,11 @@
-﻿using System;
+﻿using mobile_price_classification.Dtree;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
-using System.Runtime.Serialization.Formatters;
 using System.Runtime.Serialization;
-using DecisionTreeClassifierV2.Dataset;
-using System.Threading.Tasks;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace DecisionTreeClassifierV2.DecisionTreeClassifier
+namespace mobile_price_classification.DTree
 {
     [Serializable()]
     class DecisionTree
