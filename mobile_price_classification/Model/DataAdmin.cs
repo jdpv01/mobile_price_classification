@@ -53,8 +53,9 @@ namespace mobile_price_classification.Model
             Datarow[] datarows = Datarow.GetDatarowsFromCSV(line);
             DecisionTree = new DecisionTree(datarows);
             DecisionTree.BuildTree();
-            foreach (object val in DecisionTree.FindUniqueValues(datarows)) 
-                Console.WriteLine(val.ToString());
+            Console.WriteLine("qweq");
+            foreach (object value in DecisionTree.FindUniqueValues(datarows)) 
+                Console.WriteLine(value.ToString());
         }
 
         public IDictionary<string, int> CountRows(String column)

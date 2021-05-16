@@ -29,7 +29,11 @@ namespace mobile_price_classification
                 Title = "Select File"
             };
             if (ofd.ShowDialog() == DialogResult.OK)
+            {
                 DataGridView1.DataSource = DataAdmin.SetDataBaseConnection(ofd.FileName);
+                DataAdmin.BuildDecisionTree(ofd.FileName);
+            }
+               
             try
             {
                 DataTable dt = DataAdmin.GetDT;
