@@ -60,6 +60,14 @@ namespace mobile_price_classification.Model
         public void ClassifyDataSet()
         {
             string[] predictions = BuildDataSetFromData();
+            try
+            {
+                DT.Columns.Remove(PRML);
+            }
+            catch (ArgumentException)
+            {
+            }
+            
             DT.Columns.Add(PRML, typeof(string));
             int i = 0;
             foreach (DataRow row in DT.Rows)
@@ -67,6 +75,11 @@ namespace mobile_price_classification.Model
                 row[PRML] = DecisionTree.Classify(new Datarow(predictions[i])).ToString();
                 i++;
             }
+        }
+
+        public void DeleteTree()
+        {
+            DecisionTree = null;
         }
 
         private string[] BuildTrainingSetFromData()
