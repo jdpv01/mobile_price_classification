@@ -3,8 +3,6 @@ using mobile_price_classification.UI;
 using System;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Text;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace mobile_price_classification
@@ -18,7 +16,6 @@ namespace mobile_price_classification
         {
             InitializeComponent();
             DataAdmin = new DataAdmin();
-            //InitCustomFont();
         }  
 
         private void BTNOpen_Click(object sender, EventArgs e)
