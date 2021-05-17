@@ -7,7 +7,7 @@ namespace mobile_price_classification.DTree
     class DecisionTree
     {
         public Datarow[] Data { get; private set; }
-        private Node Root { get; private set; }
+        public Node Root { get; private set; }
         public Stack<Node> NodesToBuild { get; private set; }
 
         public DecisionTree(Datarow[] data)
