@@ -2,10 +2,11 @@
 
 namespace mobile_price_classification.DTree
 {
-    class Leaf : Node
+    class Leaf : Node, ICloneable
     {
         public Datarow[] Rows { get; private set; }
         public Tuple<object, int>[] Predictions { get; private set; }
+
         public Leaf(Datarow[] rows)
         {
             Rows = rows;

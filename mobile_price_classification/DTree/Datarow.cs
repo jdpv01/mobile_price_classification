@@ -6,10 +6,8 @@ namespace mobile_price_classification.DTree
     class Datarow
     {
         public object[] Values { get; private set; }
-        public int Count { get
-            {
-                return this.Values.Length;
-            } }
+        public int Count { get { return Values.Length; } }
+
         public Datarow(string line)
         {
             string[] lineSplit = line.Split(';');
@@ -30,7 +28,6 @@ namespace mobile_price_classification.DTree
                 }
             }
         }
-
 
         public object this[int column]
         {

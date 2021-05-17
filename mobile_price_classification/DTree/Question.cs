@@ -5,6 +5,7 @@ namespace mobile_price_classification.DTree
     {
         private readonly int Column;
         public object Value { get; private set; }
+
         public Question(int column, object value)
         {
             Column = column;
