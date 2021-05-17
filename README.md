@@ -23,6 +23,7 @@ Requirements: [***link***](docs/REQUIREMENTS.pdf) <br>
 ### Diagrams
 Object diagram:[***link***](docs/Object_diagram.pdf) <br>
 Class diagram [***link***](docs/Class_diagram.pdf) <br>
+Sequence diagram: [***link1***](docs/DiagramaSecuenciaClasify.jpg) and [***link2***](docs/DiagramaSecuenciaFiltroGraficos.jpg)<br>
 
 ## Installation
 You will need to
