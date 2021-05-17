@@ -57,9 +57,17 @@ namespace mobile_price_classification.Model
             ClassifyDataSet();
         }
 
-        public void ClassifyDataSet()
+        private void ClassifyDataSet()
         {
             string[] predictions = BuildDataSetFromData();
+            try
+            {
+                DT.Columns.Remove(PRML);
+            }
+            catch (ArgumentException)
+            {
+            }
+            
             DT.Columns.Add(PRML, typeof(string));
             int i = 0;
             foreach (DataRow row in DT.Rows)

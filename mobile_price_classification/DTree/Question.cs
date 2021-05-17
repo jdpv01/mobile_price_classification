@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace mobile_price_classification.DTree
 {
-    [Serializable()]
     class Question
     {
-        private int column;
-        public object value { get; private set; }
+        private readonly int Column;
+        public object Value { get; private set; }
+
         public Question(int column, object value)
         {
-            this.column = column;
-            this.value = value;
+            Column = column;
+            Value = value;
         }
 
         private bool IsNumeric(object obj)
@@ -24,29 +19,15 @@ namespace mobile_price_classification.DTree
 
         public bool Match(Datarow row)
         {
-            object rowValue = row[column];
-            if(IsNumeric(rowValue) && IsNumeric(value))
+            object rowValue = row[Column];
+            if(IsNumeric(rowValue) && IsNumeric(Value))
             {
-                return (double)rowValue >= (double)value;
+                return (double)rowValue >= (double)Value;
             }
             else
             {
-                return (string)rowValue == (string)value;
+                return (string)rowValue == (string)Value;
             }
-        }
-
-        public override string ToString()
-        {
-            string message = "";
-            if(IsNumeric(value))
-            {
-                message = $"Is col.{column} >= {(double)value}?";
-            }
-            else
-            {
-                message = $"Is col.{column} == {(string)value}";
-            }
-            return message;
         }
     }
 }

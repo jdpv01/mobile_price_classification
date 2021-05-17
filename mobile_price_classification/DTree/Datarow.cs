@@ -3,71 +3,52 @@ using System.IO;
 
 namespace mobile_price_classification.DTree
 {
-    [Serializable()]
     class Datarow
     {
-        public object[] values { get; private set; }
-        public int Count { get
-            {
-                return this.values.Length;
-            } }
+        public object[] Values { get; private set; }
+        public int Count { get { return Values.Length; } }
+
         public Datarow(string line)
         {
             string[] lineSplit = line.Split(';');
-            values = new object[lineSplit.Length];
-            for(int i = 0; i < values.Length; i++)
+            Values = new object[lineSplit.Length];
+            for(int i = 0; i < Values.Length; i++)
             {
-                int intVal;
-                double doubleVal;
-                if(double.TryParse(lineSplit[i], out doubleVal))
+                if (double.TryParse(lineSplit[i], out double doubleVal))
                 {
-                    values[i] = (object)doubleVal;
+                    Values[i] = (object)doubleVal;
                 }
-                else if(int.TryParse(lineSplit[i], out intVal))
+                else if (int.TryParse(lineSplit[i], out int intVal))
                 {
-                    values[i] = (object)intVal;
+                    Values[i] = (object)intVal;
                 }
                 else
                 {
-                    values[i] = (object)lineSplit[i];
+                    Values[i] = (object)lineSplit[i];
                 }
             }
         }
-
 
         public object this[int column]
         {
             get
             {
-                if (column < Count - 1) return this.values[column];
+                if (column < Count - 1) return this.Values[column];
                 else throw new IndexOutOfRangeException();
             }
             set
             {
-                if (column < Count - 1) this.values[column] = value;
+                if (column < Count - 1) this.Values[column] = value;
                 else throw new IndexOutOfRangeException();
             }
         }
 
-        public static Datarow[] GetDatarowsFromCSV(string path)
+        public static Datarow[] GetDatarowsFromStringArray(string[] data)
         {
-            if (File.Exists(path))
+            Datarow[] datarows = new Datarow[data.Length];
+            for(int i = 0; i < data.Length; i++)
             {
-                string[] lines = File.ReadAllLines(path);
-                Datarow[] datarows = new Datarow[lines.Length];
-                for (int i = 0; i < lines.Length; i++) 
-                    datarows[i] = new Datarow(lines[i]);
-                return datarows;
-            }
-            else throw new FileNotFoundException();
-        }
-
-        public static Datarow[] GetDatarowsFromStringArray(string[] input_data)
-        {
-            Datarow[] datarows = new Datarow[input_data.Length];
-            for(int i = 0; i < input_data.Length; i++)
-            {
-                datarows[i] = new Datarow(input_data[i]);
+                datarows[i] = new Datarow(data[i]);
             }
             return datarows;
         }
@@ -75,9 +56,9 @@ namespace mobile_price_classification.DTree
         public override string ToString()
         {
             string str = "";
-            for(int i = 0; i < this.values.Length; i++)
+            for(int i = 0; i < this.Values.Length; i++)
             {
-                str += values[i].ToString() + " ";
+                str += Values[i].ToString() + " ";
             }
             return str;
         }

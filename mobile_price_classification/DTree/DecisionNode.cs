@@ -3,37 +3,31 @@ using System;
 
 namespace mobile_price_classification.Dtree
 {
-    [Serializable()]
     class DecisionNode : Node, ICloneable
     {
-        public Question question { get; private set; }
-        public Node true_branch { get; set; }
-        public Node false_branch { get; set; }
+        public Question Question { get; private set; }
+        public Node TrueBranch { get; set; }
+        public Node FalseBranch { get; set; }
+        public Datarow[] TrueBranchData { get; private set; }
+        public Datarow[] FalseBranchData { get; private set; }
 
-        public Datarow[] true_branch_data { get; private set; }
-        public Datarow[] false_branch_data { get; private set; }
-        public DecisionNode(Question q, Node true_branch, Node false_branch)
+        public DecisionNode(Question q, Node trueBranch, Node falseBranch)
         {
-            this.question = q;
-            this.true_branch = true_branch;
-            this.false_branch = false_branch;
+            Question = q;
+            TrueBranch = trueBranch;
+            FalseBranch = falseBranch;
         }
 
-        public DecisionNode(Question q, Datarow[] true_branch_data, Datarow[] false_branch_data)
+        public DecisionNode(Question q, Datarow[] trueBranchData, Datarow[] falseBranchData)
         {
-            this.question = q;
-            this.true_branch_data = true_branch_data;
-            this.false_branch_data = false_branch_data;
-        }
-
-        public override string ToString()
-        {
-            return question.ToString();
+            Question = q;
+            TrueBranchData = trueBranchData;
+            FalseBranchData = falseBranchData;
         }
 
         public object Clone()
         {
-            return (object)new DecisionNode(this.question, this.true_branch, this.false_branch);
+            return (object)new DecisionNode(Question, TrueBranch, FalseBranch);
         }
     }
 }

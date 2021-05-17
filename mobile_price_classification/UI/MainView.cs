@@ -42,6 +42,7 @@ namespace mobile_price_classification
                 BTNRestore.Visible = true;
                 BTNCharts.Visible = true;
                 BTNClassify.Visible = true;
+                BTNClassify.Enabled = true;
             }
             catch (NullReferenceException)
             {
@@ -147,6 +148,7 @@ namespace mobile_price_classification
         private void Classify_Click(object sender, EventArgs e)
         {
             DataAdmin.BuildDecisionTree();
+            BTNClassify.Enabled = false;
         }
 
         private void LowerBound_Enter(object sender, EventArgs e)
