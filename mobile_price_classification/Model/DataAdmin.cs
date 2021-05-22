@@ -1,4 +1,8 @@
-﻿using mobile_price_classification.DTree;
+﻿//using mobile_price_classification.DTree;
+using Accord.MachineLearning.DecisionTrees;
+using Accord.MachineLearning.DecisionTrees.Learning;
+using Accord.Math;
+using Accord.Statistics.Filters;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -51,15 +55,44 @@ namespace mobile_price_classification.Model
 
         public void BuildDecisionTree()
         {
-            Datarow[] trainingSet = Datarow.GetDatarowsFromStringArray(BuildTrainingSetFromData());
-            DecisionTree = new DecisionTree(trainingSet);
-            DecisionTree.BuildTree();
-            ClassifyDataSet();
+            string[] trainingSet = BuildTrainingSetFromData();
+            DataTable data = new DataTable();
+            data.Columns.Add(BP);
+            data.Columns.Add(CS);
+            data.Columns.Add(DSIM);
+            data.Columns.Add(IM);
+            data.Columns.Add(NC);
+            data.Columns.Add(PH);
+            data.Columns.Add(PW);
+            data.Columns.Add(RAM);
+            data.Columns.Add(TS);
+            data.Columns.Add(WF);
+            data.Columns.Add(PR);
+            for (int i = 0; i < trainingSet.Length; i++)
+            {
+                string[] values = trainingSet[i].Split(';');
+                data.Rows.Add(values);
+            }
+            var codebook = new Codification()
+            {
+                DefaultMissingValueReplacement = Double.NaN
+            };
+            codebook.Learn(data);
+            DataTable symbols = codebook.Apply(data);
+            string[] columns = new[] { BP, CS, DSIM, IM, NC, PH, PW, RAM, TS, WF };
+            int[][] inputs = symbols.ToJagged<int>(columns);
+            int[] outputs = symbols.ToArray<int>(PR);
+            var C45 = new C45Learning()
+            {
+                Attributes = DecisionVariable.FromCodebook(codebook, columns)
+            };
+            DecisionTree = C45.Learn(inputs, outputs);
+            ClassifyDataSet(codebook, DecisionTree);
         }
 
-        private void ClassifyDataSet()
+        private void ClassifyDataSet(Codification codebook, DecisionTree DecisionTree)
         {
-            string[] predictions = BuildDataSetFromData();
+            string[] queries = BuildDataSetFromData();
             try
             {
                 DT.Columns.Remove(PRML);
@@ -67,15 +100,47 @@ namespace mobile_price_classification.Model
             catch (ArgumentException)
             {
             }
-            
+
             DT.Columns.Add(PRML, typeof(string));
             int i = 0;
             foreach (DataRow row in DT.Rows)
             {
-                row[PRML] = DecisionTree.Classify(new Datarow(predictions[i])).ToString();
+                string[] values = queries[i].Split(';');
+                Console.WriteLine(codebook.Columns.Count);
+                int[] query = codebook.Transform(values);
+                int output = DecisionTree.Decide(query);
+                row[PRML] = codebook.Revert(PR, output);
                 i++;
             }
         }
+
+        //public void BuildDecisionTree()
+        //{
+        //    Datarow[] trainingSet = Datarow.GetDatarowsFromStringArray(BuildTrainingSetFromData());
+        //    DecisionTree = new DecisionTree(trainingSet);
+        //    DecisionTree.BuildTree();
+        //    ClassifyDataSet();
+        //}
+
+        //private void ClassifyDataSet()
+        //{
+        //    string[] queries = BuildDataSetFromData();
+        //    try
+        //    {
+        //        DT.Columns.Remove(PRML);
+        //    }
+        //    catch (ArgumentException)
+        //    {
+        //    }
+
+        //    DT.Columns.Add(PRML, typeof(string));
+        //    int i = 0;
+        //    foreach (DataRow row in DT.Rows)
+        //    {
+        //        row[PRML] = DecisionTree.Classify(new Datarow(queries[i])).ToString();
+        //        i++;
+        //    }
+        //}
 
         private string[] BuildTrainingSetFromData()
         {
@@ -109,7 +174,7 @@ namespace mobile_price_classification.Model
                 {
                     if (column == DT.Columns[DT.Columns.Count - 2])
                         line += row[column].ToString();
-                    else
+                    else if (column != DT.Columns[DT.Columns.Count - 1])
                         line += row[column].ToString() + ";";
                 }
                 dataset[i] = line;

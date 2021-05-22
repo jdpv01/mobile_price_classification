@@ -31,3 +31,15 @@ D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classificatio
 D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.csproj.CoreCompileInputs.cache
 D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.exe
 D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.pdb
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Accord.dll.config
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Accord.dll
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Accord.MachineLearning.dll
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Accord.Math.Core.dll
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Accord.Math.dll
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Accord.Statistics.dll
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Accord.xml
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Accord.MachineLearning.xml
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Accord.Math.xml
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Accord.Math.Core.xml
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Accord.Statistics.xml
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.csproj.CopyComplete
