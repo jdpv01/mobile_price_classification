@@ -31,15 +31,21 @@ D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classificatio
 D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.csproj.CoreCompileInputs.cache
 D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.exe
 D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.pdb
-C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Accord.dll.config
-C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Accord.dll
-C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Accord.MachineLearning.dll
-C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Accord.Math.Core.dll
-C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Accord.Math.dll
-C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Accord.Statistics.dll
-C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Accord.xml
-C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Accord.MachineLearning.xml
-C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Accord.Math.xml
-C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Accord.Math.Core.xml
-C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Accord.Statistics.xml
 C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\obj\Debug\mobile_price_classification.csproj.CopyComplete
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\Bigtree.Algorithm.dll
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\NumSharp.dll
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\SharpLearning.Common.Interfaces.dll
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\SharpLearning.Containers.dll
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\SharpLearning.InputOutput.dll
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\System.Buffers.dll
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\System.Memory.dll
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\NumSharp.pdb
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\SharpLearning.Common.Interfaces.xml
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\SharpLearning.Containers.xml
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\SharpLearning.InputOutput.xml
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\System.Buffers.xml
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\System.Memory.xml
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml

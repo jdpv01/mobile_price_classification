@@ -147,7 +147,8 @@ namespace mobile_price_classification
 
         private void Classify_Click(object sender, EventArgs e)
         {
-            DataAdmin.BuildDecisionTree();
+            //DataAdmin.BuildDecisionTree();
+            DataAdmin.ClassifyDataSet();
             BTNClassify.Enabled = false;
         }
 

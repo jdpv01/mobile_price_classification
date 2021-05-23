@@ -1,12 +1,9 @@
-﻿//using mobile_price_classification.DTree;
-using Accord.MachineLearning.DecisionTrees;
-using Accord.MachineLearning.DecisionTrees.Learning;
-using Accord.Math;
-using Accord.Statistics.Filters;
+﻿using Mobile_price_classification.ML;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
+//using mobile_price_classification.DTree;
 
 namespace mobile_price_classification.Model
 {
@@ -17,7 +14,7 @@ namespace mobile_price_classification.Model
             TS = "touch_screen", WF = "wifi", PR = "price_range", PRML = "price_range using ML";
         public const int TRAININGSET_SIZE = 499;
         private DataTable DT;
-        private DecisionTree DecisionTree;
+        //private DecisionTree DecisionTree;
 
         public DataAdmin() { } 
 
@@ -53,64 +50,26 @@ namespace mobile_price_classification.Model
             DT.DefaultView.RowFilter = column+" >= "+lower+" AND "+column+" <= "+upper;
         }
 
-        public void BuildDecisionTree()
+        public void ClassifyDataSet()
         {
-            string[] trainingSet = BuildTrainingSetFromData();
-            DataTable data = new DataTable();
-            data.Columns.Add(BP);
-            data.Columns.Add(CS);
-            data.Columns.Add(DSIM);
-            data.Columns.Add(IM);
-            data.Columns.Add(NC);
-            data.Columns.Add(PH);
-            data.Columns.Add(PW);
-            data.Columns.Add(RAM);
-            data.Columns.Add(TS);
-            data.Columns.Add(WF);
-            data.Columns.Add(PR);
-            for (int i = 0; i < trainingSet.Length; i++)
+            DT.Columns.Add(PRML);
+            foreach(DataRow row in DT.Rows)
             {
-                string[] values = trainingSet[i].Split(';');
-                data.Rows.Add(values);
-            }
-            var codebook = new Codification()
-            {
-                DefaultMissingValueReplacement = Double.NaN
-            };
-            codebook.Learn(data);
-            DataTable symbols = codebook.Apply(data);
-            string[] columns = new[] { BP, CS, DSIM, IM, NC, PH, PW, RAM, TS, WF };
-            int[][] inputs = symbols.ToJagged<int>(columns);
-            int[] outputs = symbols.ToArray<int>(PR);
-            var C45 = new C45Learning()
-            {
-                Attributes = DecisionVariable.FromCodebook(codebook, columns)
-            };
-            DecisionTree = C45.Learn(inputs, outputs);
-            ClassifyDataSet(codebook, DecisionTree);
-        }
-
-        private void ClassifyDataSet(Codification codebook, DecisionTree DecisionTree)
-        {
-            string[] queries = BuildDataSetFromData();
-            try
-            {
-                DT.Columns.Remove(PRML);
-            }
-            catch (ArgumentException)
-            {
-            }
-
-            DT.Columns.Add(PRML, typeof(string));
-            int i = 0;
-            foreach (DataRow row in DT.Rows)
-            {
-                string[] values = queries[i].Split(';');
-                Console.WriteLine(codebook.Columns.Count);
-                int[] query = codebook.Transform(values);
-                int output = DecisionTree.Decide(query);
-                row[PRML] = codebook.Revert(PR, output);
-                i++;
+                ModelInput sampleData = new ModelInput()
+                {
+                    Battery_power = float.Parse(row[BP].ToString()),
+                    Clock_speed = float.Parse(row[CS].ToString()),
+                    Dual_sim = row[DSIM].ToString(),
+                    Int_memory = float.Parse(row[IM].ToString()),
+                    N_cores = float.Parse(row[NC].ToString()),
+                    Px_height = float.Parse(row[PH].ToString()),
+                    Px_width = float.Parse(row[PW].ToString()),
+                    Ram = float.Parse(row[RAM].ToString()),
+                    Touch_screen = row[TS].ToString(),
+                    Wifi = row[WF].ToString(),
+                };
+                var predictionResult = ConsumeModel.Predict(sampleData);
+                row[PRML] = predictionResult.Prediction.ToString();
             }
         }
 
