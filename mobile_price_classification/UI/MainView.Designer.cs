@@ -47,6 +47,9 @@ namespace mobile_price_classification
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,7 +84,7 @@ namespace mobile_price_classification
             this.CBColumns.Location = new System.Drawing.Point(95, 461);
             this.CBColumns.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CBColumns.Name = "CBColumns";
-            this.CBColumns.Size = new System.Drawing.Size(140, 31);
+            this.CBColumns.Size = new System.Drawing.Size(140, 25);
             this.CBColumns.TabIndex = 2;
             this.CBColumns.SelectedIndexChanged += new System.EventHandler(this.ColumnsCB_SelectedIndexChanged);
             // 
@@ -91,7 +94,7 @@ namespace mobile_price_classification
             this.TBLowerBound.Location = new System.Drawing.Point(96, 494);
             this.TBLowerBound.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TBLowerBound.Name = "TBLowerBound";
-            this.TBLowerBound.Size = new System.Drawing.Size(81, 31);
+            this.TBLowerBound.Size = new System.Drawing.Size(81, 23);
             this.TBLowerBound.TabIndex = 3;
             this.TBLowerBound.Visible = false;
             this.TBLowerBound.Enter += new System.EventHandler(this.LowerBound_Enter);
@@ -103,7 +106,7 @@ namespace mobile_price_classification
             this.TBUpperBound.Location = new System.Drawing.Point(183, 494);
             this.TBUpperBound.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TBUpperBound.Name = "TBUpperBound";
-            this.TBUpperBound.Size = new System.Drawing.Size(81, 31);
+            this.TBUpperBound.Size = new System.Drawing.Size(81, 23);
             this.TBUpperBound.TabIndex = 4;
             this.TBUpperBound.Visible = false;
             this.TBUpperBound.Enter += new System.EventHandler(this.UpperBound_Enter);
@@ -130,7 +133,7 @@ namespace mobile_price_classification
             this.CBCategories.Location = new System.Drawing.Point(241, 461);
             this.CBCategories.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CBCategories.Name = "CBCategories";
-            this.CBCategories.Size = new System.Drawing.Size(140, 31);
+            this.CBCategories.Size = new System.Drawing.Size(140, 25);
             this.CBCategories.TabIndex = 6;
             this.CBCategories.Visible = false;
             this.CBCategories.SelectedIndexChanged += new System.EventHandler(this.CBCategories_SelectedIndexChanged);
@@ -141,7 +144,7 @@ namespace mobile_price_classification
             this.TBSearchEntry.Location = new System.Drawing.Point(96, 494);
             this.TBSearchEntry.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TBSearchEntry.Name = "TBSearchEntry";
-            this.TBSearchEntry.Size = new System.Drawing.Size(99, 31);
+            this.TBSearchEntry.Size = new System.Drawing.Size(99, 23);
             this.TBSearchEntry.TabIndex = 7;
             this.TBSearchEntry.Visible = false;
             // 
@@ -199,7 +202,7 @@ namespace mobile_price_classification
             this.BTNClassify.UseCompatibleTextRendering = true;
             this.BTNClassify.UseVisualStyleBackColor = true;
             this.BTNClassify.Visible = false;
-            this.BTNClassify.Click += new System.EventHandler(this.Classify_Click);
+            this.BTNClassify.Click += new System.EventHandler(this.ClassifyDTImplementation_Click);
             // 
             // label1
             // 
@@ -207,7 +210,7 @@ namespace mobile_price_classification
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.25F);
             this.label1.Location = new System.Drawing.Point(874, 484);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 22);
+            this.label1.Size = new System.Drawing.Size(92, 17);
             this.label1.TabIndex = 15;
             this.label1.Text = "0: Low range";
             // 
@@ -217,7 +220,7 @@ namespace mobile_price_classification
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.25F);
             this.label2.Location = new System.Drawing.Point(874, 507);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 22);
+            this.label2.Size = new System.Drawing.Size(88, 17);
             this.label2.TabIndex = 16;
             this.label2.Text = "1: Mid range";
             // 
@@ -227,7 +230,7 @@ namespace mobile_price_classification
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.25F);
             this.label3.Location = new System.Drawing.Point(874, 529);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 22);
+            this.label3.Size = new System.Drawing.Size(94, 17);
             this.label3.TabIndex = 17;
             this.label3.Text = "2: High range";
             // 
@@ -237,7 +240,7 @@ namespace mobile_price_classification
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.25F);
             this.label4.Location = new System.Drawing.Point(874, 551);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(170, 22);
+            this.label4.Size = new System.Drawing.Size(122, 17);
             this.label4.TabIndex = 18;
             this.label4.Text = "3: Premium range";
             // 
@@ -247,17 +250,54 @@ namespace mobile_price_classification
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(874, 458);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(142, 23);
+            this.label5.Size = new System.Drawing.Size(101, 17);
             this.label5.TabIndex = 19;
             this.label5.Text = "Prince ranges";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(2, 595);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 28);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Classify";
+            this.button1.UseCompatibleTextRendering = true;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.ClassifyMLLibrary_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(95, 565);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(250, 17);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "using Decision Tree implementation";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(95, 601);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(144, 17);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "using ML.Net Library";
+            // 
             // MainView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(997, 600);
+            this.ClientSize = new System.Drawing.Size(997, 711);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -306,6 +346,9 @@ namespace mobile_price_classification
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
 

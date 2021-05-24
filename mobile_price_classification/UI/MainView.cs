@@ -145,10 +145,15 @@ namespace mobile_price_classification
             }
         }
 
-        private void Classify_Click(object sender, EventArgs e)
+        private void ClassifyDTImplementation_Click(object sender, EventArgs e)
         {
-            //DataAdmin.BuildDecisionTree();
-            DataAdmin.ClassifyDataSet();
+            DataAdmin.BuildDecisionTree();
+            BTNClassify.Enabled = false;
+        }
+
+        private void ClassifyMLLibrary_Click(object sender, EventArgs e)
+        {
+            DataAdmin.ClassifyDataSetML();
             BTNClassify.Enabled = false;
         }
 

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
-//using mobile_price_classification.DTree;
+using mobile_price_classification.DTree;
 
 namespace mobile_price_classification.Model
 {
@@ -14,7 +14,7 @@ namespace mobile_price_classification.Model
             TS = "touch_screen", WF = "wifi", PR = "price_range", PRML = "price_range using ML";
         public const int TRAININGSET_SIZE = 499;
         private DataTable DT;
-        //private DecisionTree DecisionTree;
+        private DecisionTree DecisionTree;
 
         public DataAdmin() { } 
 
@@ -50,56 +50,33 @@ namespace mobile_price_classification.Model
             DT.DefaultView.RowFilter = column+" >= "+lower+" AND "+column+" <= "+upper;
         }
 
-        public void ClassifyDataSet()
+        public void BuildDecisionTree()
         {
-            DT.Columns.Add(PRML);
-            foreach(DataRow row in DT.Rows)
-            {
-                ModelInput sampleData = new ModelInput()
-                {
-                    Battery_power = float.Parse(row[BP].ToString()),
-                    Clock_speed = float.Parse(row[CS].ToString()),
-                    Dual_sim = row[DSIM].ToString(),
-                    Int_memory = float.Parse(row[IM].ToString()),
-                    N_cores = float.Parse(row[NC].ToString()),
-                    Px_height = float.Parse(row[PH].ToString()),
-                    Px_width = float.Parse(row[PW].ToString()),
-                    Ram = float.Parse(row[RAM].ToString()),
-                    Touch_screen = row[TS].ToString(),
-                    Wifi = row[WF].ToString(),
-                };
-                var predictionResult = ConsumeModel.Predict(sampleData);
-                row[PRML] = predictionResult.Prediction.ToString();
-            }
+            Datarow[] trainingSet = Datarow.GetDatarowsFromStringArray(BuildTrainingSetFromData());
+            DecisionTree = new DecisionTree(trainingSet);
+            DecisionTree.BuildTree();
+            ClassifyDataSetDT();
         }
 
-        //public void BuildDecisionTree()
-        //{
-        //    Datarow[] trainingSet = Datarow.GetDatarowsFromStringArray(BuildTrainingSetFromData());
-        //    DecisionTree = new DecisionTree(trainingSet);
-        //    DecisionTree.BuildTree();
-        //    ClassifyDataSet();
-        //}
+        private void ClassifyDataSetDT()
+        {
+            string[] queries = BuildDataSetFromData();
+            try
+            {
+                DT.Columns.Remove(PRML);
+            }
+            catch (ArgumentException)
+            {
+            }
 
-        //private void ClassifyDataSet()
-        //{
-        //    string[] queries = BuildDataSetFromData();
-        //    try
-        //    {
-        //        DT.Columns.Remove(PRML);
-        //    }
-        //    catch (ArgumentException)
-        //    {
-        //    }
-
-        //    DT.Columns.Add(PRML, typeof(string));
-        //    int i = 0;
-        //    foreach (DataRow row in DT.Rows)
-        //    {
-        //        row[PRML] = DecisionTree.Classify(new Datarow(queries[i])).ToString();
-        //        i++;
-        //    }
-        //}
+            DT.Columns.Add(PRML, typeof(string));
+            int i = 0;
+            foreach (DataRow row in DT.Rows)
+            {
+                row[PRML] = DecisionTree.Classify(new Datarow(queries[i])).ToString();
+                i++;
+            }
+        }
 
         private string[] BuildTrainingSetFromData()
         {
@@ -140,6 +117,36 @@ namespace mobile_price_classification.Model
                 i++;
             }
             return dataset;
+        }
+
+        public void ClassifyDataSetML()
+        {
+            try
+            {
+                DT.Columns.Remove(PRML);
+            }
+            catch (ArgumentException)
+            {
+            }
+            DT.Columns.Add(PRML);
+            foreach (DataRow row in DT.Rows)
+            {
+                ModelInput sampleData = new ModelInput()
+                {
+                    Battery_power = float.Parse(row[BP].ToString()),
+                    Clock_speed = float.Parse(row[CS].ToString()),
+                    Dual_sim = row[DSIM].ToString(),
+                    Int_memory = float.Parse(row[IM].ToString()),
+                    N_cores = float.Parse(row[NC].ToString()),
+                    Px_height = float.Parse(row[PH].ToString()),
+                    Px_width = float.Parse(row[PW].ToString()),
+                    Ram = float.Parse(row[RAM].ToString()),
+                    Touch_screen = row[TS].ToString(),
+                    Wifi = row[WF].ToString(),
+                };
+                var predictionResult = ConsumeModel.Predict(sampleData);
+                row[PRML] = predictionResult.Prediction.ToString();
+            }
         }
 
         public IDictionary<string, int> CountRows(String column)
