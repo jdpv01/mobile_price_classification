@@ -74,7 +74,12 @@ namespace mobile_price_classification.Model
             }
         }
 
-        private string[] BuildTrainingSetFromData()
+        private void ClassifyDataSetDT(string query)
+        { 
+
+        }
+
+            private string[] BuildTrainingSetFromData()
         {
             if (DT.Columns.Contains(PRML))
             {
