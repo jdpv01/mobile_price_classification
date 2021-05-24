@@ -74,12 +74,7 @@ namespace mobile_price_classification.Model
             }
         }
 
-        private void ClassifyDataSetDT(string query)
-        { 
-
-        }
-
-            private string[] BuildTrainingSetFromData()
+        private string[] BuildTrainingSetFromData()
         {
             if (DT.Columns.Contains(PRML))
             {
@@ -149,6 +144,31 @@ namespace mobile_price_classification.Model
                 var predictionResult = ConsumeModel.Predict(sampleData);
                 row[PRML] = predictionResult.Prediction.ToString();
             }
+        }
+
+        public string ClassifySingleQueryDT(string query)
+        {
+            return DecisionTree.Classify(new Datarow(query)).ToString();
+        }
+
+        public string ClassifySingleQueryML(string query)
+        {
+            string[] values = query.Split(';');
+            ModelInput sampleData = new ModelInput()
+            {
+                Battery_power = float.Parse(values[0].ToString()),
+                Clock_speed = float.Parse(values[1].ToString()),
+                Dual_sim = values[2].ToString(),
+                Int_memory = float.Parse(values[3].ToString()),
+                N_cores = float.Parse(values[4].ToString()),
+                Px_height = float.Parse(values[5].ToString()),
+                Px_width = float.Parse(values[6].ToString()),
+                Ram = float.Parse(values[7].ToString()),
+                Touch_screen = values[8].ToString(),
+                Wifi = values[9].ToString(),
+            };
+            var predictionResult = ConsumeModel.Predict(sampleData);
+            return predictionResult.Prediction.ToString();
         }
 
         internal double GetMLPrecision()
