@@ -39,20 +39,20 @@ namespace mobile_price_classification.UI
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtBattery = new System.Windows.Forms.TextBox();
+            this.txtClockSpeed = new System.Windows.Forms.TextBox();
+            this.txtMemory = new System.Windows.Forms.TextBox();
+            this.txtCores = new System.Windows.Forms.TextBox();
+            this.txtHeight = new System.Windows.Forms.TextBox();
+            this.txtWidth = new System.Windows.Forms.TextBox();
+            this.txtRam = new System.Windows.Forms.TextBox();
+            this.cmbDualSim = new System.Windows.Forms.ComboBox();
+            this.cmbTouchScreen = new System.Windows.Forms.ComboBox();
+            this.cmbWifi = new System.Windows.Forms.ComboBox();
+            this.btnDT = new System.Windows.Forms.Button();
+            this.btnML = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtPriceRange = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -86,7 +86,7 @@ namespace mobile_price_classification.UI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(232, 25);
+            this.label4.Location = new System.Drawing.Point(236, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 13);
             this.label4.TabIndex = 3;
@@ -95,7 +95,7 @@ namespace mobile_price_classification.UI
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(318, 25);
+            this.label5.Location = new System.Drawing.Point(322, 26);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 13);
             this.label5.TabIndex = 4;
@@ -104,7 +104,7 @@ namespace mobile_price_classification.UI
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(395, 25);
+            this.label6.Location = new System.Drawing.Point(396, 26);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(36, 13);
             this.label6.TabIndex = 5;
@@ -113,7 +113,7 @@ namespace mobile_price_classification.UI
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(437, 25);
+            this.label7.Location = new System.Drawing.Point(445, 26);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(32, 13);
             this.label7.TabIndex = 6;
@@ -122,7 +122,7 @@ namespace mobile_price_classification.UI
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(475, 25);
+            this.label8.Location = new System.Drawing.Point(494, 26);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(24, 13);
             this.label8.TabIndex = 7;
@@ -131,7 +131,7 @@ namespace mobile_price_classification.UI
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(505, 25);
+            this.label9.Location = new System.Drawing.Point(536, 25);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 13);
             this.label9.TabIndex = 8;
@@ -140,102 +140,111 @@ namespace mobile_price_classification.UI
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(580, 25);
+            this.label10.Location = new System.Drawing.Point(611, 25);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(22, 13);
             this.label10.TabIndex = 9;
             this.label10.Text = "wifi";
             // 
-            // textBox1
+            // txtBattery
             // 
-            this.textBox1.Location = new System.Drawing.Point(36, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(68, 20);
-            this.textBox1.TabIndex = 10;
+            this.txtBattery.Location = new System.Drawing.Point(36, 42);
+            this.txtBattery.Name = "txtBattery";
+            this.txtBattery.Size = new System.Drawing.Size(68, 20);
+            this.txtBattery.TabIndex = 10;
             // 
-            // textBox2
+            // txtClockSpeed
             // 
-            this.textBox2.Location = new System.Drawing.Point(113, 42);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(62, 20);
-            this.textBox2.TabIndex = 11;
+            this.txtClockSpeed.Location = new System.Drawing.Point(113, 42);
+            this.txtClockSpeed.Name = "txtClockSpeed";
+            this.txtClockSpeed.Size = new System.Drawing.Size(62, 20);
+            this.txtClockSpeed.TabIndex = 11;
             // 
-            // textBox3
+            // txtMemory
             // 
-            this.textBox3.Location = new System.Drawing.Point(235, 41);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(77, 20);
-            this.textBox3.TabIndex = 12;
+            this.txtMemory.Location = new System.Drawing.Point(238, 42);
+            this.txtMemory.Name = "txtMemory";
+            this.txtMemory.Size = new System.Drawing.Size(77, 20);
+            this.txtMemory.TabIndex = 12;
             // 
-            // textBox4
+            // txtCores
             // 
-            this.textBox4.Location = new System.Drawing.Point(318, 41);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(71, 20);
-            this.textBox4.TabIndex = 13;
+            this.txtCores.Location = new System.Drawing.Point(322, 42);
+            this.txtCores.Name = "txtCores";
+            this.txtCores.Size = new System.Drawing.Size(71, 20);
+            this.txtCores.TabIndex = 13;
             // 
-            // textBox5
+            // txtHeight
             // 
-            this.textBox5.Location = new System.Drawing.Point(395, 41);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(36, 20);
-            this.textBox5.TabIndex = 14;
+            this.txtHeight.Location = new System.Drawing.Point(399, 42);
+            this.txtHeight.Name = "txtHeight";
+            this.txtHeight.Size = new System.Drawing.Size(43, 20);
+            this.txtHeight.TabIndex = 14;
             // 
-            // textBox6
+            // txtWidth
             // 
-            this.textBox6.Location = new System.Drawing.Point(440, 41);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(29, 20);
-            this.textBox6.TabIndex = 15;
+            this.txtWidth.Location = new System.Drawing.Point(448, 42);
+            this.txtWidth.Name = "txtWidth";
+            this.txtWidth.Size = new System.Drawing.Size(43, 20);
+            this.txtWidth.TabIndex = 15;
             // 
-            // textBox7
+            // txtRam
             // 
-            this.textBox7.Location = new System.Drawing.Point(478, 41);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(21, 20);
-            this.textBox7.TabIndex = 16;
+            this.txtRam.Location = new System.Drawing.Point(497, 42);
+            this.txtRam.Name = "txtRam";
+            this.txtRam.Size = new System.Drawing.Size(39, 20);
+            this.txtRam.TabIndex = 16;
             // 
-            // comboBox1
+            // cmbDualSim
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(184, 40);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(42, 21);
-            this.comboBox1.TabIndex = 17;
+            this.cmbDualSim.FormattingEnabled = true;
+            this.cmbDualSim.Items.AddRange(new object[] {
+            "NO",
+            "YES"});
+            this.cmbDualSim.Location = new System.Drawing.Point(181, 42);
+            this.cmbDualSim.Name = "cmbDualSim";
+            this.cmbDualSim.Size = new System.Drawing.Size(51, 21);
+            this.cmbDualSim.TabIndex = 17;
             // 
-            // comboBox2
+            // cmbTouchScreen
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(508, 42);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(66, 21);
-            this.comboBox2.TabIndex = 18;
+            this.cmbTouchScreen.FormattingEnabled = true;
+            this.cmbTouchScreen.Items.AddRange(new object[] {
+            "NO",
+            "YES"});
+            this.cmbTouchScreen.Location = new System.Drawing.Point(542, 41);
+            this.cmbTouchScreen.Name = "cmbTouchScreen";
+            this.cmbTouchScreen.Size = new System.Drawing.Size(66, 21);
+            this.cmbTouchScreen.TabIndex = 18;
             // 
-            // comboBox3
+            // cmbWifi
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(583, 41);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(38, 21);
-            this.comboBox3.TabIndex = 19;
+            this.cmbWifi.FormattingEnabled = true;
+            this.cmbWifi.Items.AddRange(new object[] {
+            "NO",
+            "YES"});
+            this.cmbWifi.Location = new System.Drawing.Point(614, 41);
+            this.cmbWifi.Name = "cmbWifi";
+            this.cmbWifi.Size = new System.Drawing.Size(48, 21);
+            this.cmbWifi.TabIndex = 19;
             // 
-            // button1
+            // btnDT
             // 
-            this.button1.Location = new System.Drawing.Point(36, 82);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "find with decision tree";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDT.Location = new System.Drawing.Point(36, 82);
+            this.btnDT.Name = "btnDT";
+            this.btnDT.Size = new System.Drawing.Size(120, 23);
+            this.btnDT.TabIndex = 20;
+            this.btnDT.Text = "find with decision tree";
+            this.btnDT.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnML
             // 
-            this.button2.Location = new System.Drawing.Point(184, 82);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "find with ML";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnML.Location = new System.Drawing.Point(184, 82);
+            this.btnML.Name = "btnML";
+            this.btnML.Size = new System.Drawing.Size(75, 23);
+            this.btnML.TabIndex = 21;
+            this.btnML.Text = "find with ML";
+            this.btnML.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -246,31 +255,31 @@ namespace mobile_price_classification.UI
             this.label11.TabIndex = 22;
             this.label11.Text = "Price range";
             // 
-            // textBox8
+            // txtPriceRange
             // 
-            this.textBox8.Location = new System.Drawing.Point(348, 84);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 23;
+            this.txtPriceRange.Location = new System.Drawing.Point(348, 84);
+            this.txtPriceRange.Name = "txtPriceRange";
+            this.txtPriceRange.Size = new System.Drawing.Size(100, 20);
+            this.txtPriceRange.TabIndex = 23;
             // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.txtPriceRange);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnML);
+            this.Controls.Add(this.btnDT);
+            this.Controls.Add(this.cmbWifi);
+            this.Controls.Add(this.cmbTouchScreen);
+            this.Controls.Add(this.cmbDualSim);
+            this.Controls.Add(this.txtRam);
+            this.Controls.Add(this.txtWidth);
+            this.Controls.Add(this.txtHeight);
+            this.Controls.Add(this.txtCores);
+            this.Controls.Add(this.txtMemory);
+            this.Controls.Add(this.txtClockSpeed);
+            this.Controls.Add(this.txtBattery);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -282,7 +291,7 @@ namespace mobile_price_classification.UI
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "RegisterForm";
-            this.Size = new System.Drawing.Size(643, 121);
+            this.Size = new System.Drawing.Size(736, 121);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,19 +309,19 @@ namespace mobile_price_classification.UI
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtBattery;
+        private System.Windows.Forms.TextBox txtClockSpeed;
+        private System.Windows.Forms.TextBox txtMemory;
+        private System.Windows.Forms.TextBox txtCores;
+        private System.Windows.Forms.TextBox txtHeight;
+        private System.Windows.Forms.TextBox txtWidth;
+        private System.Windows.Forms.TextBox txtRam;
+        private System.Windows.Forms.ComboBox cmbDualSim;
+        private System.Windows.Forms.ComboBox cmbTouchScreen;
+        private System.Windows.Forms.ComboBox cmbWifi;
+        private System.Windows.Forms.Button btnDT;
+        private System.Windows.Forms.Button btnML;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtPriceRange;
     }
 }
