@@ -74,7 +74,12 @@ namespace mobile_price_classification.Model
             }
         }
 
-        private string[] BuildTrainingSetFromData()
+        private void ClassifyDataSetDT(string query)
+        { 
+
+        }
+
+            private string[] BuildTrainingSetFromData()
         {
             if (DT.Columns.Contains(PRML))
             {
@@ -149,19 +154,14 @@ namespace mobile_price_classification.Model
         internal double GetMLPrecision()
         {
             double TP = 0;
-            double FP = 0;
             foreach (DataRow row in DT.Rows)
             {
                 if (row[PR].ToString() == row[PRML].ToString())
                 {
                     TP++;
                 }
-                else
-                {
-                    FP++;
-                }
             }
-            return (TP / (TP + FP)) * 100;
+            return (TP / DT.Rows.Count) * 100;
         }
 
         public IDictionary<string, int> CountRows(String column)
