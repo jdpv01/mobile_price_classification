@@ -41,8 +41,12 @@ namespace mobile_price_classification
                 }
                 BTNRestore.Visible = true;
                 BTNCharts.Visible = true;
-                BTNClassify.Visible = true;
-                BTNClassify.Enabled = true;
+                BTNClassifyDT.Visible = true;
+                BTNClassifyDT.Enabled = true;
+                BTNClassifyML.Visible = true;
+                BTNClassifyML.Enabled = true;
+                LabelDT.Visible = true;
+                LabelML.Visible = true;
             }
             catch (NullReferenceException)
             {
@@ -148,13 +152,11 @@ namespace mobile_price_classification
         private void ClassifyDTImplementation_Click(object sender, EventArgs e)
         {
             DataAdmin.BuildDecisionTree();
-            BTNClassify.Enabled = false;
         }
 
         private void ClassifyMLLibrary_Click(object sender, EventArgs e)
         {
             DataAdmin.ClassifyDataSetML();
-            BTNClassify.Enabled = false;
         }
 
         private void LowerBound_Enter(object sender, EventArgs e)

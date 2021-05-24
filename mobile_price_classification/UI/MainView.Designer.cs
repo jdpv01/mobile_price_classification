@@ -41,15 +41,15 @@ namespace mobile_price_classification
             this.BTNSearchString = new System.Windows.Forms.Button();
             this.BTNRestore = new System.Windows.Forms.Button();
             this.BTNCharts = new System.Windows.Forms.Button();
-            this.BTNClassify = new System.Windows.Forms.Button();
+            this.BTNClassifyDT = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.BTNClassifyML = new System.Windows.Forms.Button();
+            this.LabelDT = new System.Windows.Forms.Label();
+            this.LabelML = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -190,19 +190,19 @@ namespace mobile_price_classification
             this.BTNCharts.Visible = false;
             this.BTNCharts.Click += new System.EventHandler(this.BTNCharts_Click);
             // 
-            // BTNClassify
+            // BTNClassifyDT
             // 
-            this.BTNClassify.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNClassify.Location = new System.Drawing.Point(2, 559);
-            this.BTNClassify.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BTNClassify.Name = "BTNClassify";
-            this.BTNClassify.Size = new System.Drawing.Size(87, 28);
-            this.BTNClassify.TabIndex = 14;
-            this.BTNClassify.Text = "Classify";
-            this.BTNClassify.UseCompatibleTextRendering = true;
-            this.BTNClassify.UseVisualStyleBackColor = true;
-            this.BTNClassify.Visible = false;
-            this.BTNClassify.Click += new System.EventHandler(this.ClassifyDTImplementation_Click);
+            this.BTNClassifyDT.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNClassifyDT.Location = new System.Drawing.Point(2, 559);
+            this.BTNClassifyDT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BTNClassifyDT.Name = "BTNClassifyDT";
+            this.BTNClassifyDT.Size = new System.Drawing.Size(87, 28);
+            this.BTNClassifyDT.TabIndex = 14;
+            this.BTNClassifyDT.Text = "Classify";
+            this.BTNClassifyDT.UseCompatibleTextRendering = true;
+            this.BTNClassifyDT.UseVisualStyleBackColor = true;
+            this.BTNClassifyDT.Visible = false;
+            this.BTNClassifyDT.Click += new System.EventHandler(this.ClassifyDTImplementation_Click);
             // 
             // label1
             // 
@@ -254,39 +254,41 @@ namespace mobile_price_classification
             this.label5.TabIndex = 19;
             this.label5.Text = "Prince ranges";
             // 
-            // button1
+            // BTNClassifyML
             // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(2, 595);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 28);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Classify";
-            this.button1.UseCompatibleTextRendering = true;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.ClassifyMLLibrary_Click);
+            this.BTNClassifyML.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNClassifyML.Location = new System.Drawing.Point(2, 595);
+            this.BTNClassifyML.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BTNClassifyML.Name = "BTNClassifyML";
+            this.BTNClassifyML.Size = new System.Drawing.Size(87, 28);
+            this.BTNClassifyML.TabIndex = 20;
+            this.BTNClassifyML.Text = "Classify";
+            this.BTNClassifyML.UseCompatibleTextRendering = true;
+            this.BTNClassifyML.UseVisualStyleBackColor = true;
+            this.BTNClassifyML.Visible = false;
+            this.BTNClassifyML.Click += new System.EventHandler(this.ClassifyMLLibrary_Click);
             // 
-            // label6
+            // LabelDT
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(95, 565);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(250, 17);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "using Decision Tree implementation";
+            this.LabelDT.AutoSize = true;
+            this.LabelDT.Font = new System.Drawing.Font("Century Gothic", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelDT.Location = new System.Drawing.Point(95, 565);
+            this.LabelDT.Name = "LabelDT";
+            this.LabelDT.Size = new System.Drawing.Size(250, 17);
+            this.LabelDT.TabIndex = 21;
+            this.LabelDT.Text = "using Decision Tree implementation";
+            this.LabelDT.Visible = false;
             // 
-            // label7
+            // LabelML
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(95, 601);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(144, 17);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "using ML.Net Library";
+            this.LabelML.AutoSize = true;
+            this.LabelML.Font = new System.Drawing.Font("Century Gothic", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelML.Location = new System.Drawing.Point(95, 601);
+            this.LabelML.Name = "LabelML";
+            this.LabelML.Size = new System.Drawing.Size(144, 17);
+            this.LabelML.TabIndex = 22;
+            this.LabelML.Text = "using ML.Net Library";
+            this.LabelML.Visible = false;
             // 
             // MainView
             // 
@@ -295,15 +297,15 @@ namespace mobile_price_classification
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(997, 711);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.LabelML);
+            this.Controls.Add(this.LabelDT);
+            this.Controls.Add(this.BTNClassifyML);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.BTNClassify);
+            this.Controls.Add(this.BTNClassifyDT);
             this.Controls.Add(this.BTNCharts);
             this.Controls.Add(this.BTNRestore);
             this.Controls.Add(this.BTNSearchString);
@@ -340,15 +342,15 @@ namespace mobile_price_classification
         private System.Windows.Forms.Button BTNSearchString;
         private System.Windows.Forms.Button BTNRestore;
         private System.Windows.Forms.Button BTNCharts;
-        private System.Windows.Forms.Button BTNClassify;
+        private System.Windows.Forms.Button BTNClassifyDT;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button BTNClassifyML;
+        private System.Windows.Forms.Label LabelDT;
+        private System.Windows.Forms.Label LabelML;
     }
 }
 

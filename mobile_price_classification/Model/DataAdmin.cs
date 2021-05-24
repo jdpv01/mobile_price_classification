@@ -61,14 +61,10 @@ namespace mobile_price_classification.Model
         private void ClassifyDataSetDT()
         {
             string[] queries = BuildDataSetFromData();
-            try
+            if (DT.Columns.Contains(PRML))
             {
                 DT.Columns.Remove(PRML);
             }
-            catch (ArgumentException)
-            {
-            }
-
             DT.Columns.Add(PRML, typeof(string));
             int i = 0;
             foreach (DataRow row in DT.Rows)
@@ -80,6 +76,10 @@ namespace mobile_price_classification.Model
 
         private string[] BuildTrainingSetFromData()
         {
+            if (DT.Columns.Contains(PRML))
+            {
+                DT.Columns.Remove(PRML);
+            }
             String[] trainingSet = new string[TRAININGSET_SIZE];
             int i = 0;
             foreach (DataRow row in DT.Rows)
@@ -121,12 +121,9 @@ namespace mobile_price_classification.Model
 
         public void ClassifyDataSetML()
         {
-            try
+            if (DT.Columns.Contains(PRML))
             {
                 DT.Columns.Remove(PRML);
-            }
-            catch (ArgumentException)
-            {
             }
             DT.Columns.Add(PRML);
             foreach (DataRow row in DT.Rows)
