@@ -16,5 +16,7 @@ namespace mobile_price_classification.UI
         {
             InitializeComponent();
         }
+
+
     }
 }
