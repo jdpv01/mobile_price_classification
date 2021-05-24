@@ -152,11 +152,17 @@ namespace mobile_price_classification
         private void ClassifyDTImplementation_Click(object sender, EventArgs e)
         {
             DataAdmin.BuildDecisionTree();
+            LabelPrecisionValue.Text = DataAdmin.GetMLPrecision() + "%";
+            LabelPrecision.Visible = true;
+            LabelPrecisionValue.Visible = true;
         }
 
         private void ClassifyMLLibrary_Click(object sender, EventArgs e)
         {
             DataAdmin.ClassifyDataSetML();
+            LabelPrecisionValue.Text = DataAdmin.GetMLPrecision() + "%";
+            LabelPrecision.Visible = true;
+            LabelPrecisionValue.Visible = true; 
         }
 
         private void LowerBound_Enter(object sender, EventArgs e)
@@ -166,7 +172,6 @@ namespace mobile_price_classification
                 TBLowerBound.Text = "";
                 TBLowerBound.ForeColor = Color.Black;
             }
-
         }
 
         private void LowerBound_Leave(object sender, EventArgs e)

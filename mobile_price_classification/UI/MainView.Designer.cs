@@ -50,6 +50,8 @@ namespace mobile_price_classification
             this.BTNClassifyML = new System.Windows.Forms.Button();
             this.LabelDT = new System.Windows.Forms.Label();
             this.LabelML = new System.Windows.Forms.Label();
+            this.LabelPrecision = new System.Windows.Forms.Label();
+            this.LabelPrecisionValue = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -290,6 +292,27 @@ namespace mobile_price_classification
             this.LabelML.Text = "using ML.Net Library";
             this.LabelML.Visible = false;
             // 
+            // LabelPrecision
+            // 
+            this.LabelPrecision.AutoSize = true;
+            this.LabelPrecision.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelPrecision.Location = new System.Drawing.Point(12, 636);
+            this.LabelPrecision.Name = "LabelPrecision";
+            this.LabelPrecision.Size = new System.Drawing.Size(70, 16);
+            this.LabelPrecision.TabIndex = 23;
+            this.LabelPrecision.Text = "Precision:";
+            this.LabelPrecision.Visible = false;
+            // 
+            // LabelPrecisionValue
+            // 
+            this.LabelPrecisionValue.AutoSize = true;
+            this.LabelPrecisionValue.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelPrecisionValue.Location = new System.Drawing.Point(95, 636);
+            this.LabelPrecisionValue.Name = "LabelPrecisionValue";
+            this.LabelPrecisionValue.Size = new System.Drawing.Size(0, 16);
+            this.LabelPrecisionValue.TabIndex = 24;
+            this.LabelPrecisionValue.Visible = false;
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -297,6 +320,8 @@ namespace mobile_price_classification
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(997, 711);
+            this.Controls.Add(this.LabelPrecisionValue);
+            this.Controls.Add(this.LabelPrecision);
             this.Controls.Add(this.LabelML);
             this.Controls.Add(this.LabelDT);
             this.Controls.Add(this.BTNClassifyML);
@@ -351,6 +376,8 @@ namespace mobile_price_classification
         private System.Windows.Forms.Button BTNClassifyML;
         private System.Windows.Forms.Label LabelDT;
         private System.Windows.Forms.Label LabelML;
+        private System.Windows.Forms.Label LabelPrecision;
+        private System.Windows.Forms.Label LabelPrecisionValue;
     }
 }
 

@@ -146,6 +146,24 @@ namespace mobile_price_classification.Model
             }
         }
 
+        internal double GetMLPrecision()
+        {
+            double TP = 0;
+            double FP = 0;
+            foreach (DataRow row in DT.Rows)
+            {
+                if (row[PR].ToString() == row[PRML].ToString())
+                {
+                    TP++;
+                }
+                else
+                {
+                    FP++;
+                }
+            }
+            return (TP / (TP + FP)) * 100;
+        }
+
         public IDictionary<string, int> CountRows(String column)
         {
             IDictionary<string, int> counts = new Dictionary<string, int>();
@@ -165,6 +183,7 @@ namespace mobile_price_classification.Model
             }
             return counts;
         }
+
         public String[] MaxMinValue(String column, String column2, String valueC2)
         {
             String[] result = new string[3];
