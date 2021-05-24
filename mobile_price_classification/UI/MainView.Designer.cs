@@ -62,7 +62,7 @@ namespace mobile_price_classification
             this.DataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DataGridView1.Name = "DataGridView1";
             this.DataGridView1.RowHeadersWidth = 62;
-            this.DataGridView1.Size = new System.Drawing.Size(1180, 450);
+            this.DataGridView1.Size = new System.Drawing.Size(991, 450);
             this.DataGridView1.TabIndex = 0;
             // 
             // BTNOpen
@@ -210,7 +210,7 @@ namespace mobile_price_classification
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.25F);
-            this.label1.Location = new System.Drawing.Point(1062, 484);
+            this.label1.Location = new System.Drawing.Point(874, 484);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 17);
             this.label1.TabIndex = 15;
@@ -220,7 +220,7 @@ namespace mobile_price_classification
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.25F);
-            this.label2.Location = new System.Drawing.Point(1062, 507);
+            this.label2.Location = new System.Drawing.Point(874, 507);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 17);
             this.label2.TabIndex = 16;
@@ -230,7 +230,7 @@ namespace mobile_price_classification
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.25F);
-            this.label3.Location = new System.Drawing.Point(1062, 529);
+            this.label3.Location = new System.Drawing.Point(874, 529);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 17);
             this.label3.TabIndex = 17;
@@ -240,7 +240,7 @@ namespace mobile_price_classification
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.25F);
-            this.label4.Location = new System.Drawing.Point(1062, 551);
+            this.label4.Location = new System.Drawing.Point(874, 551);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(122, 17);
             this.label4.TabIndex = 18;
@@ -250,7 +250,7 @@ namespace mobile_price_classification
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1062, 458);
+            this.label5.Location = new System.Drawing.Point(874, 458);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(101, 17);
             this.label5.TabIndex = 19;
@@ -319,7 +319,7 @@ namespace mobile_price_classification
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.ClientSize = new System.Drawing.Size(997, 711);
             this.Controls.Add(this.LabelPrecisionValue);
             this.Controls.Add(this.LabelPrecision);
             this.Controls.Add(this.LabelML);
