@@ -229,6 +229,7 @@ namespace mobile_price_classification.UI
             this.btnML.TabIndex = 42;
             this.btnML.Text = "Classify using ML";
             this.btnML.UseVisualStyleBackColor = true;
+            this.btnML.Click += new System.EventHandler(this.btnML_Click);
             // 
             // btnDT
             // 
