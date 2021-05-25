@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace mobile_price_classification.UI
 {
-    public partial class UserControl1 : UserControl
+    public partial class RegisterForm : Form
     {
-        public UserControl1()
+        public RegisterForm()
         {
             InitializeComponent();
         }
