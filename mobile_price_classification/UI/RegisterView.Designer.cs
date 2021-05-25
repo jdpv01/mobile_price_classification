@@ -1,7 +1,7 @@
 ﻿
 namespace mobile_price_classification.UI
 {
-    partial class RegisterForm
+    partial class RegisterView
     {
         /// <summary>
         /// Required designer variable.
@@ -238,10 +238,14 @@ namespace mobile_price_classification.UI
             this.btnDT.TabIndex = 41;
             this.btnDT.Text = "Classify using DT";
             this.btnDT.UseVisualStyleBackColor = true;
+            this.btnDT.Click += new System.EventHandler(this.btnDT_Click);
             // 
             // cmbSim
             // 
             this.cmbSim.FormattingEnabled = true;
+            this.cmbSim.Items.AddRange(new object[] {
+            "No",
+            "Yes"});
             this.cmbSim.Location = new System.Drawing.Point(154, 55);
             this.cmbSim.Name = "cmbSim";
             this.cmbSim.Size = new System.Drawing.Size(62, 21);
@@ -250,6 +254,9 @@ namespace mobile_price_classification.UI
             // cmbWifi
             // 
             this.cmbWifi.FormattingEnabled = true;
+            this.cmbWifi.Items.AddRange(new object[] {
+            "No",
+            "Yes"});
             this.cmbWifi.Location = new System.Drawing.Point(630, 55);
             this.cmbWifi.Name = "cmbWifi";
             this.cmbWifi.Size = new System.Drawing.Size(62, 21);
@@ -258,6 +265,9 @@ namespace mobile_price_classification.UI
             // cmbTouchScreen
             // 
             this.cmbTouchScreen.FormattingEnabled = true;
+            this.cmbTouchScreen.Items.AddRange(new object[] {
+            "No",
+            "Yes"});
             this.cmbTouchScreen.Location = new System.Drawing.Point(562, 55);
             this.cmbTouchScreen.Name = "cmbTouchScreen";
             this.cmbTouchScreen.Size = new System.Drawing.Size(62, 21);
@@ -312,7 +322,7 @@ namespace mobile_price_classification.UI
             this.txtBattery.Size = new System.Drawing.Size(62, 20);
             this.txtBattery.TabIndex = 31;
             // 
-            // RegisterForm
+            // RegisterView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -347,7 +357,7 @@ namespace mobile_price_classification.UI
             this.Controls.Add(this.txtMemory);
             this.Controls.Add(this.txtClock);
             this.Controls.Add(this.txtBattery);
-            this.Name = "RegisterForm";
+            this.Name = "RegisterView";
             this.Text = "Register Form";
             this.ResumeLayout(false);
             this.PerformLayout();
