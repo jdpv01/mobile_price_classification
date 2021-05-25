@@ -182,7 +182,7 @@
     <EmbeddedResource Include="UI\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Data\train.csv" />
+    <None Include="Data\test.csv" />
     <None Include="Data\train.xlsx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

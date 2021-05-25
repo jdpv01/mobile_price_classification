@@ -12,7 +12,7 @@ namespace mobile_price_classification.Model
         public const string BP = "battery_power", CS = "clock_speed", DSIM = "dual_sim",
             IM = "int_memory", NC = "n_cores", PH = "px_height", PW = "px_width", RAM = "ram",
             TS = "touch_screen", WF = "wifi", PR = "price_range", PRML = "price_range using ML";
-        public const int TRAININGSET_SIZE = 499;
+        public const int TRAININGSET_SIZE = 1399;
         private DataTable DT;
         private DecisionTree DecisionTree;
 
