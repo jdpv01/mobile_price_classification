@@ -163,6 +163,12 @@
     <Compile Include="UI\ChartsView.Designer.cs">
       <DependentUpon>ChartsView.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\RegisterView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RegisterView.Designer.cs">
+      <DependentUpon>RegisterView.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\MainView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,12 +177,6 @@
     </Compile>
     <Compile Include="UI\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI\UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -185,11 +185,11 @@
     <EmbeddedResource Include="UI\ChartsView.resx">
       <DependentUpon>ChartsView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\RegisterView.resx">
+      <DependentUpon>RegisterView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Data\train.csv" />
     <None Include="Data\train.xlsx" />

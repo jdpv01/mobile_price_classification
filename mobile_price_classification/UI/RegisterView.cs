@@ -25,6 +25,7 @@ namespace mobile_price_classification.UI
             string query = "";
             btnDT.Enabled = false;
             btnML.Enabled = false;
+            btnClean.Enabled = false;
             try
             {
                 float.Parse(txtBattery.Text.ToString());
@@ -55,6 +56,7 @@ namespace mobile_price_classification.UI
                     txtPriceRange.Text = MainView.GetDataAdmin.ClassifySingleQueryDT(query);
                     btnDT.Enabled = true;
                     btnML.Enabled = true;
+                    btnClean.Enabled = true;
                 }
             }
             catch (FormatException)
@@ -62,6 +64,7 @@ namespace mobile_price_classification.UI
                 MessageBox.Show("Please digit numeric values");
                 btnDT.Enabled = true;
                 btnML.Enabled = true;
+                btnClean.Enabled = true;
             }
         }
 
@@ -70,6 +73,7 @@ namespace mobile_price_classification.UI
             string query = "";
             btnDT.Enabled = false;
             btnML.Enabled = false;
+            btnClean.Enabled = false;
             try
             {
                 float.Parse(txtBattery.Text.ToString());
@@ -100,6 +104,7 @@ namespace mobile_price_classification.UI
                     txtPriceRange.Text = MainView.GetDataAdmin.ClassifySingleQueryML(query);
                     btnDT.Enabled = true;
                     btnML.Enabled = true;
+                    btnClean.Enabled = true;
                 }
             }
             catch (FormatException)
@@ -107,7 +112,23 @@ namespace mobile_price_classification.UI
                 MessageBox.Show("Please digit numeric values");
                 btnDT.Enabled = true;
                 btnML.Enabled = true;
+                btnClean.Enabled = true;
             }
+        }
+
+        private void btnClean_Click(object sender, EventArgs e)
+        {
+            txtBattery.Text = "";
+            txtClock.Text = "";
+            txtCores.Text = "";
+            txtHeight.Text = "";
+            txtMemory.Text = "";
+            txtPriceRange.Text = "";
+            txtRam.Text = "";
+            txtWidth.Text = "";
+            cmbSim.Text = "";
+            cmbTouchScreen.Text="";
+            cmbWifi.Text = "";
         }
     }
 }

@@ -59,6 +59,7 @@ namespace mobile_price_classification.UI
             this.txtMemory = new System.Windows.Forms.TextBox();
             this.txtClock = new System.Windows.Forms.TextBox();
             this.txtBattery = new System.Windows.Forms.TextBox();
+            this.btnClean = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label17
@@ -323,11 +324,22 @@ namespace mobile_price_classification.UI
             this.txtBattery.Size = new System.Drawing.Size(62, 20);
             this.txtBattery.TabIndex = 31;
             // 
+            // btnClean
+            // 
+            this.btnClean.Location = new System.Drawing.Point(562, 99);
+            this.btnClean.Name = "btnClean";
+            this.btnClean.Size = new System.Drawing.Size(62, 23);
+            this.btnClean.TabIndex = 61;
+            this.btnClean.Text = "Clean";
+            this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
+            // 
             // RegisterView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 139);
+            this.Controls.Add(this.btnClean);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
@@ -397,5 +409,6 @@ namespace mobile_price_classification.UI
         private System.Windows.Forms.TextBox txtMemory;
         private System.Windows.Forms.TextBox txtClock;
         private System.Windows.Forms.TextBox txtBattery;
+        private System.Windows.Forms.Button btnClean;
     }
 }
