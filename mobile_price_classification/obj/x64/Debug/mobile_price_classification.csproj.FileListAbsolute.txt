@@ -114,3 +114,4 @@ D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classificatio
 D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\obj\x64\Debug\mobile_price_classification.csproj.CopyComplete
 D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\obj\x64\Debug\mobile_price_classification.exe
 D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\obj\x64\Debug\mobile_price_classification.pdb
+D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\obj\x64\Debug\mobile_price_classification.UI.RegisterView.resources

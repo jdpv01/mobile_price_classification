@@ -52,6 +52,7 @@ namespace mobile_price_classification
             this.LabelML = new System.Windows.Forms.Label();
             this.LabelPrecision = new System.Windows.Forms.Label();
             this.LabelPrecisionValue = new System.Windows.Forms.Label();
+            this.btnRegister = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -313,6 +314,20 @@ namespace mobile_price_classification
             this.LabelPrecisionValue.TabIndex = 24;
             this.LabelPrecisionValue.Visible = false;
             // 
+            // btnRegister
+            // 
+            this.btnRegister.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.Location = new System.Drawing.Point(2, 670);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(87, 28);
+            this.btnRegister.TabIndex = 25;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseCompatibleTextRendering = true;
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Visible = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -320,6 +335,7 @@ namespace mobile_price_classification
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(997, 711);
+            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.LabelPrecisionValue);
             this.Controls.Add(this.LabelPrecision);
             this.Controls.Add(this.LabelML);
@@ -378,6 +394,7 @@ namespace mobile_price_classification
         private System.Windows.Forms.Label LabelML;
         private System.Windows.Forms.Label LabelPrecision;
         private System.Windows.Forms.Label LabelPrecisionValue;
+        private System.Windows.Forms.Button btnRegister;
     }
 }
 

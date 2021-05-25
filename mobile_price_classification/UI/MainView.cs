@@ -213,5 +213,12 @@ namespace mobile_price_classification
         }
 
         public DataAdmin GetDataAdmin => DataAdmin;
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            RegisterView rv= new RegisterView(this);
+            rv.Show();
+            btnRegister.Enabled = false;
+        }
     }
 }
