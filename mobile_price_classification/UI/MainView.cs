@@ -11,6 +11,7 @@ namespace mobile_price_classification
     {
         private readonly DataAdmin DataAdmin;
         private ChartsView ChartsView;
+        private SingleQueryView SingleQueryView;
 
         public MainView()
         {
@@ -63,6 +64,11 @@ namespace mobile_price_classification
         public void EnableChartsButton()
         {
             BTNCharts.Enabled = true;
+        }
+
+        public void EnableSingleQueryButton()
+        {
+            BTNSingleQuery.Enabled = true;
         }
 
         private void BTNRestore_Click(object sender, EventArgs e)
@@ -155,6 +161,7 @@ namespace mobile_price_classification
             LabelPrecisionValue.Text = DataAdmin.GetMLPrecision() + "%";
             LabelPrecision.Visible = true;
             LabelPrecisionValue.Visible = true;
+            BTNSingleQuery.Visible = true;
         }
 
         private void ClassifyMLLibrary_Click(object sender, EventArgs e)
@@ -162,7 +169,7 @@ namespace mobile_price_classification
             DataAdmin.ClassifyDataSetML();
             LabelPrecisionValue.Text = DataAdmin.GetMLPrecision() + "%";
             LabelPrecision.Visible = true;
-            LabelPrecisionValue.Visible = true; 
+            LabelPrecisionValue.Visible = true;
         }
 
         private void LowerBound_Enter(object sender, EventArgs e)
@@ -206,6 +213,7 @@ namespace mobile_price_classification
             try
             {
                 ChartsView.Close();
+                SingleQueryView.Close();
             }
             catch (NullReferenceException)
             {
@@ -213,5 +221,12 @@ namespace mobile_price_classification
         }
 
         public DataAdmin GetDataAdmin => DataAdmin;
+
+        private void BTNSingleQuery_Click(object sender, EventArgs e)
+        {
+            SingleQueryView = new SingleQueryView(this);
+            SingleQueryView.Show();
+            BTNSingleQuery.Enabled = false;
+        }
     }
 }

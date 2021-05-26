@@ -163,6 +163,12 @@
     <Compile Include="UI\ChartsView.Designer.cs">
       <DependentUpon>ChartsView.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\SingleQueryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SingleQueryView.Designer.cs">
+      <DependentUpon>SingleQueryView.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\MainView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ChartsView.resx">
       <DependentUpon>ChartsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SingleQueryView.resx">
+      <DependentUpon>SingleQueryView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
