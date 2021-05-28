@@ -33,6 +33,6 @@ You will need to
 4. Go to the UI folder, then go to MainView.cs and run it
 
 ## Video
-You can see a preview here: https://youtu.be/phHUiWhugM0
+You can see a preview here: https://youtu.be/kiOT_TI12sc
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)](https://forthebadge.com)
