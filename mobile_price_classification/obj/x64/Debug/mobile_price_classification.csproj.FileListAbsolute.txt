@@ -116,3 +116,11 @@ D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classificatio
 D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\obj\x64\Debug\mobile_price_classification.pdb
 D:\universidad\semestre 5\integrador 1\proyecto final\mobile_price_classification\mobile_price_classification\obj\x64\Debug\mobile_price_classification.UI.RegisterView.resources
 C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\obj\x64\Debug\mobile_price_classification.UI.SingleQueryView.resources
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\x64\Debug\ClosedXML.dll
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\x64\Debug\DocumentFormat.OpenXml.dll
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\x64\Debug\ExcelNumberFormat.dll
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\x64\Debug\System.IO.Packaging.dll
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\x64\Debug\ClosedXML.pdb
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\x64\Debug\ClosedXML.xml
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\x64\Debug\DocumentFormat.OpenXml.xml
+C:\Users\usuario\source\repos\mobile_price_classification\mobile_price_classification\bin\x64\Debug\ExcelNumberFormat.xml

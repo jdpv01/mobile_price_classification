@@ -12,11 +12,15 @@ namespace mobile_price_classification.Model
         public const string BP = "battery_power", CS = "clock_speed", DSIM = "dual_sim",
             IM = "int_memory", NC = "n_cores", PH = "px_height", PW = "px_width", RAM = "ram",
             TS = "touch_screen", WF = "wifi", PR = "price_range", PRML = "price_range using ML";
-        public const int TRAININGSET_SIZE = 1399;
+        public readonly int[] LEVELS = { 800, 1000, 1200, 1400, 1600 };
+        private int Counter;
         private DataTable DT;
         private DecisionTree DecisionTree;
+        public double Precision { get; set; }
 
-        public DataAdmin() { } 
+        public DataAdmin() {
+            Counter = 0;
+        } 
 
         public DataView SetDataBaseConnection(string line)
         {
@@ -52,7 +56,13 @@ namespace mobile_price_classification.Model
 
         public void BuildDecisionTree()
         {
-            Datarow[] trainingSet = Datarow.GetDatarowsFromStringArray(BuildTrainingSetFromData());
+            if (Counter == 5)
+            {
+                Counter = 0;
+            }
+            Datarow[] trainingSet = 
+                Datarow.GetDatarowsFromStringArray(BuildTrainingSetFromData(LEVELS[Counter]));
+            Counter++;
             DecisionTree = new DecisionTree(trainingSet);
             DecisionTree.BuildTree();
             ClassifyDataSetDT();
@@ -74,13 +84,13 @@ namespace mobile_price_classification.Model
             }
         }
 
-        private string[] BuildTrainingSetFromData()
+        private string[] BuildTrainingSetFromData(int size)
         {
             if (DT.Columns.Contains(PRML))
             {
                 DT.Columns.Remove(PRML);
             }
-            String[] trainingSet = new string[TRAININGSET_SIZE];
+            String[] trainingSet = new string[size];
             int i = 0;
             foreach (DataRow row in DT.Rows)
             {
@@ -93,7 +103,10 @@ namespace mobile_price_classification.Model
                         line += row[column].ToString() + ";";
                 }
                 trainingSet[i] = line;
-                if (i == TRAININGSET_SIZE - 1) break;
+                if (i == size - 1)
+                {
+                    break;
+                }
                 i++;
             }
             return trainingSet;
@@ -186,7 +199,8 @@ namespace mobile_price_classification.Model
                     FP++;
                 }
             }
-            return (TP / (TP + FP)) * 100;
+            Precision = (TP / (TP + FP));
+            return Precision;
         }
 
         public IDictionary<string, int> CountRows(String column)

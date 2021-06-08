@@ -5,7 +5,7 @@ namespace mobile_price_classification.UI
 {
     public partial class SingleQueryView : Form
     {
-        private readonly MainView MainView;
+        private      MainView MainView;
 
         public SingleQueryView(MainView MainView)
         {
@@ -77,11 +77,6 @@ namespace mobile_price_classification.UI
         private void SingleQueryView_FormClosed(object sender, FormClosedEventArgs e)
         {
             MainView.EnableSingleQueryButton();
-        }
-
-        internal void EnableBTNClassifyDT()
-        {
-            btnDT.Enabled = true;
         }
     }
 }

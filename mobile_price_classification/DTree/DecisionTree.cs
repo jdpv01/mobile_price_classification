@@ -16,6 +16,42 @@ namespace mobile_price_classification.DTree
             NodesToBuild = new Stack<Node>();
         }
 
+        private static void PrintNode(Node node, string spacing, bool status)
+        {
+            Console.Write(spacing);
+            Console.ForegroundColor = (status) ? ConsoleColor.Green : ConsoleColor.Red;
+            Console.Write("--> " + status.ToString());
+            Console.ForegroundColor = ConsoleColor.Gray;
+            if (node is DecisionNode)
+            {
+                Console.Write(" " + (node as DecisionNode).ToString());
+                Console.Write("\n");
+            }
+            else
+            {
+                Console.Write(" " + (node as Leaf).ToString());
+                Console.Write("\n");
+            }
+        }
+
+        public void PrintTree()
+        {
+            string spacing = "";
+            Stack<Tuple<Node, bool, string>> nodes_to_print = new Stack<Tuple<Node, bool, string>>();
+            nodes_to_print.Push(new Tuple<Node, bool, string>(this.Root, true, spacing));
+            while (nodes_to_print.Count > 0)
+            {
+                Tuple<Node, bool, string> tuple = nodes_to_print.Pop();
+                PrintNode(tuple.Item1, tuple.Item3, tuple.Item2);
+                if (tuple.Item1 is DecisionNode)
+                {
+                    spacing += "  ";
+                    nodes_to_print.Push(new Tuple<Node, bool, string>((tuple.Item1 as DecisionNode).FalseBranch, false, spacing));
+                    nodes_to_print.Push(new Tuple<Node, bool, string>((tuple.Item1 as DecisionNode).TrueBranch, true, spacing));
+                }
+            }
+        }
+
         public Leaf Classify(Datarow row)
         {
             Node node;
@@ -125,7 +161,6 @@ namespace mobile_price_classification.DTree
         {
             List<Datarow> trueRows = new List<Datarow>();
             List<Datarow> falseRows = new List<Datarow>();
-
             foreach (Datarow row in rows)
             {
                 if (q.Match(row)) trueRows.Add(row);
