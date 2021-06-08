@@ -21,18 +21,18 @@ Engineer's method: [***link***](docs/Engineering_Method.pdf) <br>
 Requirements: [***link***](docs/REQUIREMENTS.pdf) <br>
 
 ### Diagrams
-Object diagram:[***link***](docs/Object_diagram.pdf) <br>
-Class diagram [***link***](docs/Class_diagram.pdf) <br>
+Object diagram: [***link***](docs/Object_diagram.pdf) <br>
+Class diagram: [***link***](docs/Class_diagram.pdf) <br>
 Sequence diagram: [***link1***](docs/DiagramaSecuenciaClasify.jpg) and [***link2***](docs/DiagramaSecuenciaFiltroGraficos.jpg)<br>
 
 ## Installation
 You will need to
-1. Have installed an IDE such like: Eclipse, VS Code, and so on.
-2. Use `git clone`https://github.com/jdpv01/mobile_price_classification
+1. Have installed an IDE such like: Eclipse, VS Code, Visual Studio, and so on.
+2. Use `git clone` https://github.com/jdpv01/mobile_price_classification
 3. Open your IDE and import project 'mobile_price_classification'
 4. Go to the UI folder, then go to MainView.cs and run it
 
 ## Video
-You can see a preview here: https://youtu.be/phHUiWhugM0
+You can see a preview here: https://youtu.be/kiOT_TI12sc
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)](https://forthebadge.com)
