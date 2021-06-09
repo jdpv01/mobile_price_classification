@@ -37,6 +37,6 @@ You will need to
 4. Go to the UI folder, then go to MainView.cs and run it
 
 ## Video
-You can see a preview here: https://youtu.be/kiOT_TI12sc
+You can see a preview here: https://youtu.be/OZME5nVXCG0
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-c-sharp.svg)](https://forthebadge.com)
