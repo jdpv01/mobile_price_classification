@@ -25,6 +25,10 @@ Object diagram: [***link***](docs/Object_diagram.pdf) <br>
 Class diagram: [***link***](docs/Class_diagram.pdf) <br>
 Sequence diagram: [***link1***](docs/DiagramaSecuenciaClasify.jpg) and [***link2***](docs/DiagramaSecuenciaFiltroGraficos.jpg)<br>
 
+### Experiments
+
+Excel: [***link***](docs/Experimento.xlsx) <br>
+
 ## Installation
 You will need to
 1. Have installed an IDE such like: Eclipse, VS Code, Visual Studio, and so on.
